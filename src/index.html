@@ -15,38 +15,110 @@
 
 <body>
 
-  <!-- ========================
-       NAVIGATION
-  ========================== -->
-  <header id="navbar">
-    <nav>
-      <a href="#hero" class="logo">Ouabo Samuel Jordan</a>
-      <ul>
-        <li><a href="#about">Über mich</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projekte</a></li>
-        <li><a href="#experience">Erfahrung</a></li>
-        <li><a href="#contact">Kontakt</a></li>
+<!-- ========================
+     NAVIGATION
+========================== -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <nav class="max-w-6xl mx-auto px-8 py-4 flex items-center justify-between">
+  
+      <a href="#hero" class="font-serif text-xl text-gray-900 tracking-tight">
+        Samuel Ouabo
+      </a>
+  
+      <ul class="flex gap-8 list-none">
+        <li><a href="#about"      class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Über mich</a></li>
+        <li><a href="#skills"     class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Skills</a></li>
+        <li><a href="#projects"   class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Projekte</a></li>
+        <li><a href="#experience" class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Erfahrung</a></li>
+        <li><a href="#contact"    class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Kontakt</a></li>
       </ul>
+  
     </nav>
   </header>
 
   <main>
 
-    <!-- ========================
-         HERO
-    ========================== -->
-    <section id="hero">
-      <p class="label">Full-Stack Software Engineer</p>
-      <h1>Samuel Jordan <span>Ouabo</span></h1>
-      <p class="tagline">
-        Master-Student der Informatik · FAU Erlangen-Nürnberg
-      </p>
-      <div class="cta-group">
-        <a href="#projects" class="btn-primary">Projekte ansehen</a>
-        <a href="#contact" class="btn-secondary">Kontakt aufnehmen</a>
+<!-- ========================
+     HERO
+========================== -->
+<section id="hero" class="min-h-screen bg-gray-50 flex items-center pt-20">
+    <div class="max-w-6xl mx-auto px-8 py-24 grid grid-cols-2 gap-16 items-center">
+  
+      <!-- Linke Seite: Text -->
+      <div>
+        <p class="font-mono text-xs text-accent uppercase tracking-widest mb-6">
+          // Full-Stack Software Engineer
+        </p>
+  
+        <h1 class="font-serif text-6xl text-gray-900 leading-tight tracking-tight mb-6">
+          Samuel Jordan <br>
+          <span class="italic text-accent">Ouabo</span>
+        </h1>
+  
+        <p class="text-lg text-gray-500 font-light leading-relaxed mb-10 max-w-md">
+          Master-Student der Informatik · FAU Erlangen-Nürnberg.
+          Spezialisiert auf Full-Stack-Entwicklung & KI-Integration.
+        </p>
+  
+        <div class="flex gap-4 items-center">
+          <a href="#projects"
+             class="bg-accent text-white px-7 py-3 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
+            Projekte ansehen
+          </a>
+          <a href="#contact"
+             class="text-gray-500 text-sm font-medium border-b border-gray-300 pb-0.5 hover:text-gray-900 hover:border-gray-900 transition-colors">
+            Kontakt aufnehmen →
+          </a>
+        </div>
       </div>
-    </section>
+  
+      <!-- Rechte Seite: Info-Card -->
+      <div class="bg-accent/5 rounded-2xl p-8 flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-lg p-8 w-80">
+  
+          <!-- Card Header -->
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white font-serif text-lg flex-shrink-0">
+              SJ
+            </div>
+            <div>
+              <p class="font-semibold text-sm text-gray-900">Samuel Jordan Ouabo</p>
+              <p class="text-xs text-gray-400 mt-0.5">FAU Erlangen-Nürnberg · M.Sc. Informatik</p>
+            </div>
+          </div>
+  
+          <hr class="border-gray-100 mb-6">
+  
+          <!-- Card Stats -->
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between">
+              <span class="text-xs text-gray-400">Erfahrung</span>
+              <span class="font-mono text-xs text-accent font-medium">3+ Jahre</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-xs text-gray-400">Projekte</span>
+              <span class="font-mono text-xs text-accent font-medium">3 Abgeschlossen</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-xs text-gray-400">Fokus</span>
+              <span class="font-mono text-xs text-accent font-medium">Full-Stack + LLM</span>
+            </div>
+          </div>
+  
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Java</span>
+            <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">TypeScript</span>
+            <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Vue.js</span>
+            <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Docker</span>
+            <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Node.js</span>
+          </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  </section>
 
     <!-- ========================
          ÜBER MICH
