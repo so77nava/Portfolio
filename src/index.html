@@ -556,51 +556,135 @@
     </div>
   </section>
 
-    <!-- ========================
-         KONTAKT
-    ========================== -->
-    <section id="contact">
-      <h2>Kontakt</h2>
-      <p>Offen für Vollzeitstellen und spannende Projekte nach dem Masterabschluss.</p>
-
-      <ul class="contact-list">
-        <li>
-          <span>E-Mail:</span>
-          <a href="mailto:ouabosamuel10@gmail.com">ouabosamuel10@gmail.com</a>
-        </li>
-        <li>
-          <span>GitHub:</span>
-          <a href="https://github.com/so77nava" target="_blank">github.com/so77nava</a>
-        </li>
-        <li>
-          <span>Standort:</span>
-          <span>Erlangen, Deutschland</span>
-        </li>
-      </ul>
-
-      <!-- Kontaktformular (wird später mit Node.js verbunden) -->
-      <form id="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Dein Name" required />
-
-        <label for="email">E-Mail</label>
-        <input type="email" id="email" name="email" placeholder="deine@email.com" required />
-
-        <label for="message">Nachricht</label>
-        <textarea id="message" name="message" rows="5" placeholder="Deine Nachricht..." required></textarea>
-
-        <button type="submit">Nachricht senden</button>
-      </form>
-    </section>
+<!-- ========================
+     KONTAKT
+========================== -->
+<section id="contact" class="bg-accent py-24">
+    <div class="max-w-6xl mx-auto px-8">
+  
+      <p class="font-mono text-xs text-white/60 uppercase tracking-widest mb-3">
+        // Kontakt
+      </p>
+      <h2 class="font-serif text-4xl text-white tracking-tight mb-4">
+        Lass uns reden.
+      </h2>
+      <p class="text-white/70 text-lg font-light mb-12 max-w-xl">
+        Offen für Vollzeitstellen und spannende Projekte nach dem Masterabschluss.
+      </p>
+  
+      <div class="grid grid-cols-2 gap-12 items-start">
+  
+        <!-- Linke Seite: Kontaktinfos + Formular -->
+        <div class="space-y-4">
+  
+          <a href="mailto:ouabosamuel10@gmail.com"
+             class="flex items-center gap-4 bg-white/10 border border-white/15 rounded-xl p-5 hover:bg-white/20 transition-colors">
+            <span class="text-2xl">✉️</span>
+            <div>
+              <p class="text-xs text-white/60 mb-0.5">E-Mail</p>
+              <p class="text-sm font-medium text-white">ouabosamuel10@gmail.com</p>
+            </div>
+          </a>
+  
+          <a href="https://github.com/so77nava" target="_blank"
+             class="flex items-center gap-4 bg-white/10 border border-white/15 rounded-xl p-5 hover:bg-white/20 transition-colors">
+            <span class="text-2xl">💻</span>
+            <div>
+              <p class="text-xs text-white/60 mb-0.5">GitHub</p>
+              <p class="text-sm font-medium text-white">github.com/so77nava</p>
+            </div>
+          </a>
+  
+          <a href="https://linkedin.com/in/" target="_blank"
+             class="flex items-center gap-4 bg-white/10 border border-white/15 rounded-xl p-5 hover:bg-white/20 transition-colors">
+            <span class="text-2xl">🔗</span>
+            <div>
+              <p class="text-xs text-white/60 mb-0.5">LinkedIn</p>
+              <p class="text-sm font-medium text-white">Profil ansehen →</p>
+            </div>
+          </a>
+  
+          <div class="flex items-center gap-4 bg-white/10 border border-white/15 rounded-xl p-5">
+            <span class="text-2xl">📍</span>
+            <div>
+              <p class="text-xs text-white/60 mb-0.5">Standort</p>
+              <p class="text-sm font-medium text-white">Erlangen, Bayern</p>
+            </div>
+          </div>
+  
+        </div>
+  
+        <!-- Rechte Seite: Kontaktformular -->
+        <form id="contact-form" class="space-y-4">
+  
+          <div>
+            <label for="name" class="block text-xs text-white/60 uppercase tracking-wider mb-2">
+              Name
+            </label>
+            <input
+              type="text" id="name" name="name"
+              placeholder="Dein Name"
+              required
+              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors"
+            />
+          </div>
+  
+          <div>
+            <label for="email" class="block text-xs text-white/60 uppercase tracking-wider mb-2">
+              E-Mail
+            </label>
+            <input
+              type="email" id="email" name="email"
+              placeholder="deine@email.com"
+              required
+              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors"
+            />
+          </div>
+  
+          <div>
+            <label for="message" class="block text-xs text-white/60 uppercase tracking-wider mb-2">
+              Nachricht
+            </label>
+            <textarea
+              id="message" name="message"
+              rows="5"
+              placeholder="Deine Nachricht..."
+              required
+              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors resize-none"
+            ></textarea>
+          </div>
+  
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full bg-white text-accent font-medium text-sm py-3 rounded-lg hover:bg-white/90 transition-colors"
+          >
+            Nachricht senden
+          </button>
+  
+          <!-- Feedback Nachricht -->
+          <p id="form-feedback" class="text-sm text-center text-white/70 hidden"></p>
+  
+        </form>
+      </div>
+    </div>
+  </section>
 
   </main>
 
-  <!-- ========================
-       FOOTER
-  ========================== -->
-  <footer>
-    <p>© 2025 Samuel Jordan Ouabo — Gebaut mit HTML, CSS & JavaScript</p>
+<!-- ========================
+     FOOTER
+========================== -->
+<footer class="bg-gray-900 py-8">
+    <div class="max-w-6xl mx-auto px-8 flex items-center justify-between">
+      <p class="font-mono text-xs text-gray-500">
+        © 2025 Samuel Jordan Ouabo
+      </p>
+      <p class="font-mono text-xs text-gray-500">
+        Built with HTML · Tailwind · JavaScript
+      </p>
+    </div>
   </footer>
-
+  <script src="js/main.js"></script>
 </body>
 </html>
