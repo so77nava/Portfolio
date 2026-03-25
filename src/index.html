@@ -354,77 +354,207 @@
     </div>
   </section>
 
-    <!-- ========================
-         PROJEKTE
-    ========================== -->
-    <section id="projects">
-      <h2>Projekte</h2>
+<!-- ========================
+     PROJEKTE
+========================== -->
+<section id="projects" class="bg-white py-24">
+    <div class="max-w-6xl mx-auto px-8">
+  
+      <p class="font-mono text-xs text-accent uppercase tracking-widest mb-3">
+        // Portfolio
+      </p>
+      <h2 class="font-serif text-4xl text-gray-900 tracking-tight mb-4">
+        Ausgewählte Projekte
+      </h2>
+      <p class="text-gray-500 text-lg font-light mb-12 max-w-xl">
+        Akademische und berufliche Projekte, die meine technische Bandbreite zeigen.
+      </p>
+  
+      <div class="space-y-6">
+  
+        <!-- Projekt 1 -->
+        <article class="project-card border border-gray-100 rounded-2xl p-10 grid grid-cols-[1fr_auto] gap-8 items-start hover:shadow-md transition-shadow">
+          <div>
+            <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">
+              // Akademisches Projekt · FAU
+            </p>
+            <h3 class="font-serif text-2xl text-gray-900 tracking-tight mb-1">
+              Intelligent Document Management System
+            </h3>
+            <p class="text-sm text-accent font-medium mb-4">
+              FAU Erlangen-Nürnberg — Rolle: Full-Stack & AI-Integration Developer
+            </p>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              Intelligentes Dokumentenmanagement-System mit automatisierter Klassifizierung
+              von Bauunterlagen, LLM-gestützter semantischer Analyse und interaktiver
+              Chat-Funktion für effizienten Wissenszugriff.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Automatisierte Pipeline via Ollama (LLM) + Apache Tika & Tesseract OCR
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                C# / ASP.NET Core Backend mit Multi-Tenant-Architektur & PostgreSQL 17
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Angular 19 SPA mit JWT-Authentifizierung und RBAC
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Docker Containerisierung + CI/CD via GitHub Actions
+              </li>
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">C#</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">ASP.NET Core</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Angular 19</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">PostgreSQL</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Ollama</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Docker</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">GitHub Actions</span>
+            </div>
+          </div>
+          <p class="font-mono text-xs text-gray-400 whitespace-nowrap pt-1">
+            Apr. 2025 – Jul. 2025
+          </p>
+        </article>
+  
+        <!-- Projekt 2 -->
+        <article class="project-card border border-gray-100 rounded-2xl p-10 grid grid-cols-[1fr_auto] gap-8 items-start hover:shadow-md transition-shadow">
+          <div>
+            <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">
+              // Bachelor-Abschlussprojekt
+            </p>
+            <h3 class="font-serif text-2xl text-gray-900 tracking-tight mb-1">
+              SmartEDU — E-Library Management System
+            </h3>
+            <p class="text-sm text-accent font-medium mb-4">
+              Universität Yaoundé I — Rolle: Full-Stack Entwickler & System-Architekt
+            </p>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              Vollständige E-Library-Plattform auf Basis einer Microservice-Architektur,
+              mit separaten Diensten für Authentifizierung, Dokumentenmanagement
+              und Benutzerverwaltung.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Node.js / Express REST-API mit JWT + Bcrypt-Authentifizierung
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Vue.js + Vuex Dashboard für Studenten, Dozenten & Administratoren
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Docker + Kubernetes Cluster, CI/CD via Jenkins & GitHub
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Unit-Tests mit Jest, Code-Qualität mit ESLint
+              </li>
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Vue.js</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Node.js</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">MySQL</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Docker</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Kubernetes</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Jenkins</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Jest</span>
+            </div>
+          </div>
+          <p class="font-mono text-xs text-gray-400 whitespace-nowrap pt-1">
+            März – Jun. 2022
+          </p>
+        </article>
+  
+      </div>
+    </div>
+  </section>
 
-      <article class="project-card">
-        <h3>Intelligent Document Management System</h3>
-        <p class="project-meta">FAU Erlangen-Nürnberg · Apr. 2025 – Jul. 2025</p>
-        <p>
-          Automatisierte Pipeline zur Klassifizierung von Bauunterlagen mit
-          LLM-Integration (Ollama), OCR und Angular 19 SPA.
-        </p>
-        <ul>
-          <li>C# / ASP.NET Core Backend mit Multi-Tenant-Architektur</li>
-          <li>LLM-gestützte Chat-Funktion für Wissenszugriff</li>
-          <li>Docker + GitHub Actions CI/CD</li>
-        </ul>
-        <div class="tech-stack">
-          <span>C#</span><span>ASP.NET Core</span><span>Angular 19</span>
-          <span>PostgreSQL</span><span>Docker</span><span>Ollama</span>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <h3>SmartEDU — E-Library Management System</h3>
-        <p class="project-meta">Universität Yaoundé I · März – Jun. 2022</p>
-        <p>
-          Microservice-basierte E-Library-Plattform mit separaten Diensten
-          für Authentifizierung, Dokumentenmanagement und Benutzerverwaltung.
-        </p>
-        <ul>
-          <li>Node.js / Express REST-API mit JWT-Authentifizierung</li>
-          <li>Vue.js + Vuex Dashboard für Studenten & Dozenten</li>
-          <li>Docker + Kubernetes + Jenkins CI/CD</li>
-        </ul>
-        <div class="tech-stack">
-          <span>Vue.js</span><span>Node.js</span><span>MySQL</span>
-          <span>Docker</span><span>Kubernetes</span><span>Jenkins</span>
-        </div>
-      </article>
-
-    </section>
-
-    <!-- ========================
-         ERFAHRUNG
-    ========================== -->
-    <section id="experience">
-      <h2>Berufserfahrung</h2>
-
-      <article class="exp-item">
-        <h3>Werkstudent Softwareentwicklung</h3>
-        <p class="exp-meta">Viertel Motoren GmbH · Nürnberg · Jul. 2024 – heute</p>
-        <ul>
-          <li>Entwicklung und Wartung interner Softwarelösungen</li>
-          <li>Verwaltung und Pflege von Datenbanken</li>
-          <li>Identifizierung von Prozessoptimierungspotenzialen</li>
-        </ul>
-      </article>
-
-      <article class="exp-item">
-        <h3>Werkstudent Softwareentwicklung</h3>
-        <p class="exp-meta">SOLUTECHN Sarl · Yaoundé · Sep. 2021 – Apr. 2022</p>
-        <ul>
-          <li>Implementierung responsiver Web-Interfaces mit React & Vue.js</li>
-          <li>Design und Optimierung relationaler Datenbankschemata</li>
-          <li>Code-Reviews und Unit-Tests</li>
-        </ul>
-      </article>
-
-    </section>
+<!-- ========================
+     ERFAHRUNG
+========================== -->
+<section id="experience" class="bg-gray-50 py-24">
+    <div class="max-w-6xl mx-auto px-8">
+  
+      <p class="font-mono text-xs text-accent uppercase tracking-widest mb-3">
+        // Berufserfahrung
+      </p>
+      <h2 class="font-serif text-4xl text-gray-900 tracking-tight mb-4">
+        Stationen
+      </h2>
+      <p class="text-gray-500 text-lg font-light mb-12 max-w-xl">
+        Praxiserfahrung in der Softwareentwicklung — in Deutschland und international.
+      </p>
+  
+      <!-- Timeline -->
+      <div class="relative pl-8 border-l border-gray-200 space-y-12">
+  
+        <!-- Job 1 -->
+        <article class="exp-item relative">
+          <div class="absolute -left-[2.35rem] top-1.5 w-3 h-3 rounded-full bg-accent"></div>
+  
+          <div class="flex items-start justify-between mb-1">
+            <h3 class="font-serif text-xl text-gray-900">Werkstudent Softwareentwicklung</h3>
+            <span class="font-mono text-xs text-gray-400">Jul. 2024 – heute</span>
+          </div>
+          <p class="text-sm text-accent font-medium mb-4">
+            Viertel Motoren GmbH · Nürnberg
+          </p>
+          <ul class="space-y-2 mb-4">
+            <li class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
+              Entwicklung und Wartung interner Softwarelösungen
+            </li>
+            <li class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
+              Verwaltung und Pflege von Datenbanken
+            </li>
+            <li class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
+              Identifizierung von Prozessoptimierungspotenzialen
+            </li>
+            <li class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
+              Fehleranalysen und Unterstützung bei laufenden Projekten
+            </li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">Lobster Pro</span>
+            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">Lobster Data</span>
+            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">Jasper Studio</span>
+            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">MySQL</span>
+          </div>
+        </article>
+  
+        <!-- Job 2 -->
+        <article class="exp-item relative">
+          <div class="absolute -left-[2.35rem] top-1.5 w-3 h-3 rounded-full bg-accent"></div>
+  
+          <div class="flex items-start justify-between mb-1">
+            <h3 class="font-serif text-xl text-gray-900">Werkstudent Softwareentwicklung</h3>
+            <span class="font-mono text-xs text-gray-400">Sep. 2021 – Apr. 2022</span>
+          </div>
+          <p class="text-sm text-accent font-medium mb-4">
+            SOLUTECHN Sarl · Yaoundé, Kamerun
+          </p>
+          <ul class="space-y-2 mb-4">
+            <li class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
+              Konzeption und Implementierung responsiver Web-Interfaces mit React & Vue.js
+            </li>
+            <li class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
+              Design und Optimierung relationaler Datenbankschemata in MySQL
+            </li>
+            <li class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
+              Systematische Code-Reviews und Unit-Tests
+            </li>
+          </ul>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">HTML</span>
+            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">Bootstrap</span>
+            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">React.js</span>
+            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">Vue.js</span>
+            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">SQL</span>
+            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">GitHub</span>
+          </div>
+        </article>
+  
+      </div>
+    </div>
+  </section>
 
     <!-- ========================
          KONTAKT
