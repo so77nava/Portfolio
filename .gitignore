@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Tailwind compiled output
+src/css/output.css
+
+# Logs
+npm-debug.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.cursor/
+.vscode/
