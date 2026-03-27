@@ -47,7 +47,7 @@ const form = document.getElementById('contact-form');
 const feedback = document.getElementById('form-feedback');
 const submitBtn = document.getElementById('submit-btn');
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async(e) => {
   e.preventDefault(); // Seite nicht neu laden
 
   // Werte aus dem Formular lesen
@@ -65,26 +65,41 @@ form.addEventListener('submit', (e) => {
   submitBtn.disabled = true;
   submitBtn.textContent = 'Wird gesendet...';
 
-  // Simuliertes Senden (wird später mit Node.js ersetzt)
-  setTimeout(() => {
-    showFeedback(`Danke, ${name}! Deine Nachricht wurde empfangen. ✓`, 'success');
-    form.reset();
+  try {
+    //POST-Anfrage an Node.js Server
+    const response = await fetch('http://localhost:3000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({name, email, message})
+    });
+
+    // Antwort als JSON lesen
+    const data = await response.json();
+
+    if (data.success) {
+      showFeedback(data.message, 'success');
+      form.reset();
+    } else {
+      showFeedback(data.error, 'error');
+    }
+  } catch (error) {
+    //Netzwerkfehler → Server läuft vielleicht nicht
+    showFeedback('Fehler: Server nicht erreichbar.', 'error');
+    console.error(error);
+  } finally {
+    //Button immer wieder aktivieren
     submitBtn.disabled = false;
     submitBtn.textContent = 'Nachricht senden';
-  }, 1500);
+  }
 });
+
 
 // Hilfsfunktion: Feedback anzeigen
 function showFeedback(message, type) {
-  feedback.textContent = message;
-  feedback.classList.remove('hidden', 'text-red-300', 'text-green-300');
-
-  if (type === 'error') {
-    feedback.classList.add('text-red-300');
-  } else {
-    feedback.classList.add('text-green-300');
+    feedback.textContent = message;
+    feedback.classList.remove('hidden', 'text-red-300', 'text-green-300');
+    feedback.classList.add(type === 'error' ? 'text-red-300' : 'text-green-300');
   }
-}
 
 
 // ------------------------------------------------

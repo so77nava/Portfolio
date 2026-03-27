@@ -1,6 +1,10 @@
 # Dependencies
 node_modules/
 
+# Environment variables
+server/.env 
+.env 
+
 # Tailwind compiled output
 src/css/output.css
 
