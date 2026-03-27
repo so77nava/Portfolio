@@ -4,8 +4,8 @@
   "description": "My personal portfolio",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/css/style.css -o ./src/css/output.css",
-    "watch:css": "tailwindcss -i ./src/css/style.css -o ./src/css/output.css --watch",
+    "build:css": "tailwindcss -i ./docs/css/style.css -o ./docs/css/output.css",
+    "watch:css": "tailwindcss -i ./docs/css/style.css -o ./docs/css/output.css --watch",
     "server": "node server/index.js",
     "dev": "nodemon server/index.js"
   },

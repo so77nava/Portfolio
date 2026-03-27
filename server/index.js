@@ -28,9 +28,9 @@ app.use(cors());
 // JSON-Body parsen → wir können req.body lesen
 app.use(express.json());
 
-// Statische Dateien aus /src ausliefern
+// Statische Dateien aus /docs ausliefern
 // → http://localhost:3000 zeigt index.html
-app.use(express.static(path.join(__dirname, '../src')));
+app.use(express.static(path.join(__dirname, '../docs')));
 
 
 // ------------------------------------------------
