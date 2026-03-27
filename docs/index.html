@@ -25,100 +25,101 @@
         Samuel Ouabo
       </a>
   
-      <ul class="flex gap-8 list-none">
-        <li><a href="#about"      class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Über mich</a></li>
-        <li><a href="#skills"     class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Skills</a></li>
-        <li><a href="#projects"   class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Projekte</a></li>
-        <li><a href="#experience" class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Erfahrung</a></li>
-        <li><a href="#contact"    class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Kontakt</a></li>
-      </ul>
+      <!-- Desktop Menu -->
+    <ul class="hidden md:flex gap-8 list-none">
+      <li><a href="#about"      class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Über mich</a></li>
+      <li><a href="#skills"     class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Skills</a></li>
+      <li><a href="#projects"   class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Projekte</a></li>
+      <li><a href="#experience" class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Erfahrung</a></li>
+      <li><a href="#contact"    class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Kontakt</a></li>
+    </ul>
+
+    <!-- Mobile Burger Button -->
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2">
+      <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
+      <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
+      <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
+    </button>
   
     </nav>
+    <!-- Mobile Menu (versteckt bis Button geklickt) -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+    <ul class="flex flex-col px-6 py-4 gap-4 list-none">
+      <li><a href="#about"      class="text-sm font-medium text-gray-500 uppercase tracking-widest">Über mich</a></li>
+      <li><a href="#skills"     class="text-sm font-medium text-gray-500 uppercase tracking-widest">Skills</a></li>
+      <li><a href="#projects"   class="text-sm font-medium text-gray-500 uppercase tracking-widest">Projekte</a></li>
+      <li><a href="#experience" class="text-sm font-medium text-gray-500 uppercase tracking-widest">Erfahrung</a></li>
+      <li><a href="#contact"    class="text-sm font-medium text-gray-500 uppercase tracking-widest">Kontakt</a></li>
+    </ul>
+  </div>
+
   </header>
 
   <main>
 
-<!-- ========================
-     HERO
-========================== -->
-<section id="hero" class="min-h-screen bg-gray-50 flex items-center pt-20">
-    <div class="max-w-6xl mx-auto px-8 py-24 grid grid-cols-2 gap-16 items-center">
-  
-      <!-- Linke Seite: Text -->
-      <div>
-        <p class="font-mono text-xs text-accent uppercase tracking-widest mb-6">
-          // Full-Stack Software Engineer
-        </p>
-  
-        <h1 class="font-serif text-6xl text-gray-900 leading-tight tracking-tight mb-6">
-          Samuel Jordan <br>
-          <span class="italic text-accent">Ouabo</span>
-        </h1>
-  
-        <p class="text-lg text-gray-500 font-light leading-relaxed mb-10 max-w-md">
-          Master-Student der Informatik · FAU Erlangen-Nürnberg.
-          Spezialisierung in Software Engineering und Datenbansysteme. 
-        </p>
-  
-        <div class="flex gap-4 items-center">
-          <a href="#projects"
-             class="bg-accent text-white px-7 py-3 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
-            Projekte ansehen
-          </a>
-          <a href="#contact"
-             class="text-gray-500 text-sm font-medium border-b border-gray-300 pb-0.5 hover:text-gray-900 hover:border-gray-900 transition-colors">
-            Kontakt aufnehmen →
-          </a>
+    <section id="hero" class="min-h-screen bg-gray-50 flex items-center pt-20">
+      <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    
+        <div>
+          <p class="font-mono text-xs text-accent uppercase tracking-widest mb-6">
+            // Full-Stack Software Engineer
+          </p>
+          <h1 class="font-serif text-5xl lg:text-6xl text-gray-900 leading-tight tracking-tight mb-6">
+            Samuel Jordan <br>
+            <span class="italic text-accent">Ouabo</span>
+          </h1>
+          <p class="text-lg text-gray-500 font-light leading-relaxed mb-10 max-w-md">
+            Master-Student der Informatik · FAU Erlangen-Nürnberg.
+            Spezialisiert auf Full-Stack-Entwicklung & KI-Integration.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+            <a href="#projects" class="bg-accent text-white px-7 py-3 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
+              Projekte ansehen
+            </a>
+            <a href="#contact" class="text-gray-500 text-sm font-medium border-b border-gray-300 pb-0.5 hover:text-gray-900 transition-colors">
+              Kontakt aufnehmen →
+            </a>
+          </div>
         </div>
-      </div>
-  
-      <!-- Rechte Seite: Info-Card -->
-      <div class="bg-accent/5 rounded-2xl p-8 flex items-center justify-center">
-        <div class="bg-white rounded-xl shadow-lg p-8 w-80">
-  
-          <!-- Card Header -->
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white font-serif text-lg flex-shrink-0">
-              SJ
+    
+        <div class="bg-accent/5 rounded-2xl p-8 flex items-center justify-center">
+          <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-sm">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white font-serif text-lg flex-shrink-0">
+                SJ
+              </div>
+              <div>
+                <p class="font-semibold text-sm text-gray-900">Samuel Jordan Ouabo</p>
+                <p class="text-xs text-gray-400 mt-0.5">FAU Erlangen-Nürnberg · M.Sc. Informatik</p>
+              </div>
             </div>
-            <div>
-              <p class="font-semibold text-sm text-gray-900">Samuel Jordan Ouabo</p>
-              <p class="text-xs text-gray-400 mt-0.5">FAU Erlangen-Nürnberg · M.Sc. Informatik</p>
+            <hr class="border-gray-100 mb-6">
+            <div class="space-y-3 mb-6">
+              <div class="flex justify-between">
+                <span class="text-xs text-gray-400">Erfahrung</span>
+                <span class="font-mono text-xs text-accent font-medium">3+ Jahre</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-xs text-gray-400">Projekte</span>
+                <span class="font-mono text-xs text-accent font-medium">3 Abgeschlossen</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-xs text-gray-400">Fokus</span>
+                <span class="font-mono text-xs text-accent font-medium">Full-Stack + LLM</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Java</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">TypeScript</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Vue.js</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Docker</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Node.js</span>
             </div>
           </div>
-  
-          <hr class="border-gray-100 mb-6">
-  
-          <!-- Card Stats -->
-          <div class="space-y-3 mb-6">
-            <div class="flex justify-between">
-              <span class="text-xs text-gray-400">Erfahrung</span>
-              <span class="font-mono text-xs text-accent font-medium">3+ Jahre</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-xs text-gray-400">Projekte</span>
-              <span class="font-mono text-xs text-accent font-medium">3 Abgeschlossen</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-xs text-gray-400">Fokus</span>
-              <span class="font-mono text-xs text-accent font-medium">Full-Stack + LLM</span>
-            </div>
-          </div>
-  
-          <!-- Tags -->
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Java</span>
-            <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">TypeScript</span>
-            <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Vue.js</span>
-            <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Docker</span>
-            <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Node.js</span>
-          </div>
-  
         </div>
+    
       </div>
-  
-    </div>
-  </section>
+    </section>
 
 <!-- ========================
      ÜBER MICH

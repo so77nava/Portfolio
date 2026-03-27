@@ -2,6 +2,22 @@
 // main.js — Portfolio Interaktivität
 // ================================================
 
+// ------------------------------------------------
+// 0. BURGER MENÜ — Mobile Navigation
+// ------------------------------------------------
+const menuBtn    = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
+
+// Menü schließen wenn ein Link geklickt wird
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+});
 
 // ------------------------------------------------
 // 1. NAVBAR — Schatten beim Scrollen hinzufügen
