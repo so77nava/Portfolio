@@ -753,6 +753,14 @@ video {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-\[1fr_auto\] {
+  grid-template-columns: 1fr auto;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -789,8 +797,8 @@ video {
   gap: 0.5rem;
 }
 
-.gap-3 {
-  gap: 0.75rem;
+.gap-20 {
+  gap: 5rem;
 }
 
 .gap-4 {
@@ -803,6 +811,10 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .space-y-12 > :not([hidden]) ~ :not([hidden]) {
@@ -848,6 +860,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .rounded {
@@ -978,20 +994,16 @@ video {
   background-color: rgb(254 249 195 / var(--tw-bg-opacity, 1));
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .p-5 {
   padding: 1.25rem;
-}
-
-.p-6 {
-  padding: 1.5rem;
 }
 
 .p-7 {
@@ -1000,6 +1012,14 @@ video {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-2 {
@@ -1077,6 +1097,10 @@ video {
 
 .pl-8 {
   padding-left: 2rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
 }
 
 .pt-20 {
