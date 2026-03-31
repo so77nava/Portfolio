@@ -81,26 +81,45 @@ form.addEventListener('submit', async(e) => {
   submitBtn.disabled = true;
   submitBtn.textContent = 'Wird gesendet...';
 
-  try {
+  /*try {
     //POST-Anfrage an Node.js Server
     const response = await fetch('http://localhost:3000/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({name, email, message})
-    });
+    });*/
+
+    try {
+      //Formspree URL : https://formspree.io/f/xbdpybqr
+      const response = await fetch('https://formspree.io/f/xbdpybqr', {
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({name, email, message})
+      });
+    
 
     // Antwort als JSON lesen
     const data = await response.json();
 
-    if (data.success) {
-      showFeedback(data.message, 'success');
+    if (response.ok) {
+      showFeedback(`Danke, ${name}! Deine Nachricht wurde gesendet. ✓`, 'success');
       form.reset();
     } else {
-      showFeedback(data.error, 'error');
+      showFeedback(data.error || 'Ein Fehler ist aufgetreten.', 'error');
     }
+
+    // if (data.success) {
+    //   showFeedback(data.message, 'success');
+    //   form.reset();
+    // } else {
+    //   showFeedback(data.error, 'error');
+    // }
   } catch (error) {
     //Netzwerkfehler → Server läuft vielleicht nicht
-    showFeedback('Fehler: Server nicht erreichbar.', 'error');
+    showFeedback('Fehler beim Senden. Bitte versuche es erneut.', 'error');
     console.error(error);
   } finally {
     //Button immer wieder aktivieren
