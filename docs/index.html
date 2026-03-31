@@ -295,7 +295,7 @@
         Von der Datenbankarchitektur bis zum Cloud-Deployment.
       </p>
   
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
   
         <!-- Card 1: Sprachen -->
         <div class="bg-white border border-gray-100 rounded-xl p-7 hover:shadow-md transition-shadow">
@@ -353,7 +353,7 @@
           </ul>
         </div>
   
-        <!-- Card 3: Tools -->
+        <!-- Card 3: Tools & DevOps -->
         <div class="bg-white border border-gray-100 rounded-xl p-7 hover:shadow-md transition-shadow">
           <p class="font-mono text-xs text-accent uppercase tracking-widest mb-1">Tools & DevOps</p>
           <h3 class="font-serif text-xl text-gray-900 mb-6">Tools & Infrastruktur</h3>
@@ -371,16 +371,60 @@
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-green-100 text-green-800">Fundiert</span>
             </li>
             <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Ollama (LLM)</span>
+              <span class="text-sm text-gray-700">MongoDB</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span class="text-sm text-gray-700">nginx</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span class="text-sm text-gray-700">Webpack</span>
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
             </li>
             <li class="flex items-center justify-between">
               <span class="text-sm text-gray-700">Kubernetes</span>
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-gray-100 text-gray-500">Basiswissen</span>
             </li>
+            <li class="flex items-center justify-between">
+              <span class="text-sm text-gray-700">OpenStack</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-gray-100 text-gray-500">Basiswissen</span>
+            </li>
           </ul>
         </div>
-  
+
+        <!-- Card 4: Web & Protokolle -->
+      <div class="bg-white border border-gray-100 rounded-xl p-7 hover:shadow-md transition-shadow">
+        <p class="font-mono text-xs text-accent uppercase tracking-widest mb-1">Web & Protokolle</p>
+        <h3 class="font-serif text-xl text-gray-900 mb-6">Web-Technologien</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center justify-between">
+            <span class="text-sm text-gray-700">WebSockets</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-green-100 text-green-800">Fundiert</span>
+          </li>
+          <li class="flex items-center justify-between">
+            <span class="text-sm text-gray-700">REST APIs</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-green-100 text-green-800">Fundiert</span>
+          </li>
+          <li class="flex items-center justify-between">
+            <span class="text-sm text-gray-700">WebRTC</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
+          </li>
+          <li class="flex items-center justify-between">
+            <span class="text-sm text-gray-700">TypeScript</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
+          </li>
+          <li class="flex items-center justify-between">
+            <span class="text-sm text-gray-700">WebAssembly</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-gray-100 text-gray-500">Basiswissen</span>
+          </li>
+          <li class="flex items-center justify-between">
+            <span class="text-sm text-gray-700">Ollama (LLM)</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
+          </li>
+        </ul>
+      </div>
+        
       </div>
     </div>
   </section>
@@ -402,8 +446,64 @@
       </p>
   
       <div class="space-y-6">
-  
         <!-- Projekt 1 -->
+        <article class="project-card border border-gray-100 rounded-2xl p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 lg:gap-8 items-start hover:shadow-md transition-shadow">
+          <div>
+            <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">
+              // Universitätsprojekt · FAU Erlangen-Nürnberg
+            </p>
+            <h3 class="font-serif text-2xl text-gray-900 tracking-tight mb-1">
+              WebChat — Vollständige Chat-Anwendung
+            </h3>
+            <p class="text-sm text-accent font-medium mb-4">
+              FAU Erlangen-Nürnberg · Web-basierte Systeme WS 2025/2026
+            </p>
+            <p class="text-gray-500 text-sm leading-relaxed mb-5">
+              Vollständige Chat-Anwendung, schrittweise über ein Semester entwickelt —
+              von einem einfachen JavaScript-Client bis hin zu einer produktionsreifen,
+              cloud-deployed Architektur mit Echtzeit-Kommunikation, KI-Features und
+              sicherer Peer-to-Peer-Verbindung.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Echtzeit-Chat via WebSockets mit Typing Notifications und Desktop-Benachrichtigungen
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Secret Messaging Modus via WebRTC (PeerJS) — direkte P2P-Verbindung ohne Server
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Rechtschreibprüfung (TypeScript) & Wortvorhersage via WebAssembly (Rust/Markov)
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                REST API + WebSocket-Server mit Node.js, Express & MongoDB (persistente Datenhaltung)
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Deployment in OpenStack (RRZE Cloud) mit Docker, nginx Reverse Proxy & docker-compose
+              </li>
+              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
+                Giphy API Integration & JavaScript-Bundling mit Webpack
+              </li>
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">JavaScript</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">TypeScript</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">WebSockets</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">WebRTC</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">WebAssembly</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Node.js</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Express</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">MongoDB</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">nginx</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Docker</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Webpack</span>
+              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">OpenStack</span>
+            </div>
+          </div>
+          <p class="font-mono text-xs text-gray-400 lg:whitespace-nowrap lg:pt-1">
+            Okt. 2025 – Jan. 2026
+          </p>
+        </article>
+        <!-- Projekt 2 -->
         <article class="project-card border border-gray-100 rounded-2xl p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 lg:gap-8 items-start hover:shadow-md transition-shadow">
           <div>
             <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">
@@ -449,7 +549,7 @@
           </p>
         </article>
   
-        <!-- Projekt 2 -->
+        <!-- Projekt 3 -->
         <article class="project-card border border-gray-100 rounded-2xl p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 lg:gap-8 items-start hover:shadow-md transition-shadow">
           <div>
             <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">
