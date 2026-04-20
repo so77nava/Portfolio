@@ -3,6 +3,53 @@
 // ================================================
 
 // ------------------------------------------------
+// SPRACHUMSCHALTER — i18n
+// ------------------------------------------------
+
+// Aktuelle Sprache aus localStorage laden (Standard: Deutsch)
+let currentLang = localStorage.getItem('lang') || 'de';
+
+function applyTranslations(lang) {
+  const t = translations[lang];
+  if (!t) return;
+
+  // Alle Elemente mit data-i18n Attribut finden und Text ersetzen
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) {
+      // Placeholder für Input/Textarea
+      if (el.hasAttribute('placeholder')) {
+        el.setAttribute('placeholder', t[key]);
+      } else {
+        el.textContent = t[key];
+      }
+    }
+  });
+
+  // Placeholder separat behandeln
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key]) el.setAttribute('placeholder', t[key]);
+  });
+
+  // Button Label updaten
+  document.getElementById('lang-label').textContent = lang === 'de' ? 'EN' : 'DE';
+
+  // HTML lang Attribut setzen
+  document.documentElement.lang = lang;
+}
+
+// Sprachumschalter Button
+document.getElementById('lang-toggle').addEventListener('click', () => {
+  currentLang = currentLang === 'de' ? 'en' : 'de';
+  localStorage.setItem('lang', currentLang);
+  applyTranslations(currentLang);
+});
+
+// Beim Laden: gespeicherte Sprache anwenden
+applyTranslations(currentLang);
+
+// ------------------------------------------------
 // 0. BURGER MENÜ — Mobile Navigation
 // ------------------------------------------------
 const menuBtn    = document.getElementById('menu-btn');

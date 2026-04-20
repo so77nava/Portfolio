@@ -1,0 +1,207 @@
+// ================================================
+// i18n.js — Übersetzungen DE / EN
+// ================================================
+
+const translations = {
+    de: {
+      // NAV
+      "nav.about":      "Über mich",
+      "nav.skills":     "Skills",
+      "nav.projects":   "Projekte",
+      "nav.experience": "Erfahrung",
+      "nav.contact":    "Kontakt",
+  
+      // HERO
+      "hero.label":   "// Full-Stack Software Engineer",
+      "hero.title1":  "Samuel Jordan",
+      "hero.title2":  "Ouabo",
+      "hero.tagline": "Master-Student der Informatik · FAU Erlangen-Nürnberg. Spezialisiert auf Full-Stack-Entwicklung & KI-Integration.",
+      "hero.cta1":    "Projekte ansehen",
+      "hero.cta2":    "Kontakt aufnehmen →",
+      "hero.card.sub":   "FAU Erlangen-Nürnberg · M.Sc. Informatik",
+      "hero.card.exp":   "Erfahrung",
+      "hero.card.proj":  "Projekte",
+      "hero.card.focus": "Fokus",
+      "hero.card.expval":   "Werkstudent 2+ J.",
+      "hero.card.projval":  "3 Abgeschlossen",
+      "hero.card.focusval": "Full-Stack + LLM",
+      "hero.badge.open": "Offen für neue Stellen",
+      "hero.badge.msc":  "M.Sc. Informatik",
+      "hero.badge.fau":  "FAU Erlangen",
+  
+      // ABOUT
+      "about.label":  "// Über mich",
+      "about.title1": "Engineering Software.",
+      "about.title2": "Solving Real Problems.",
+      "about.p1": "Ich bin Samuel, Full-Stack-Entwickler und Masterstudent der Informatik an der FAU Erlangen-Nürnberg. Mit Vertiefung in Software Engineering und Datenbanksystemen entwickle ich skalierbare, wartbare Systeme — von der Datenbankarchitektur bis zur produktionsreifen Benutzeroberfläche.",
+      "about.p2": "Durch meine Tätigkeit als Werkstudent habe ich reale Projekterfahrung gesammelt und dabei gelernt, technische Komplexität mit pragmatischen Lösungen zu begegnen. Mein besonderes Interesse gilt der Integration moderner KI-Modelle (LLMs) und modernen Cloud-Architekturen.",
+      "about.p3": "Ich suche eine Position, in der ich anspruchsvolle technische Herausforderungen löse, Verantwortung übernehme und gemeinsam mit einem starken Team nachhaltige Softwarelösungen gestalte.",
+      "about.stat.exp":   "Jahre Werkstudent",
+      "about.stat.tech":  "Technologien",
+      "about.stat.proj":  "Abgeschlossene Projekte",
+      "about.stat.lang":  "Sprachen (FR / DE / EN)",
+      "about.thesis.label": "Masterarbeit — in Planung",
+      "about.thesis.text":  "Das Thema wird in Kürze in Absprache mit meinem Betreuer festgelegt. Details folgen.",
+      "about.info.location": "Erlangen, Deutschland",
+      "about.info.study":    "M.Sc. Informatik — FAU Erlangen-Nürnberg",
+      "about.info.job":      "Werkstudent @ Viertel Motoren GmbH",
+      "about.info.lang":     "Französisch · Deutsch · Englisch",
+      "about.info.license":  "Klasse AM / B / L",
+      "about.label.location": "Standort",
+      "about.label.study":    "Studium",
+      "about.label.job":      "Aktuell",
+      "about.label.email":    "E-Mail",
+      "about.label.lang":     "Sprachen",
+      "about.label.license":  "Führerschein",
+  
+      // SKILLS
+      "skills.label":  "// Technische Kompetenzen",
+      "skills.title":  "Meine Werkzeuge",
+      "skills.lead":   "Von der Datenbankarchitektur bis zum Cloud-Deployment.",
+      "skills.card1.title": "Programmiersprachen",
+      "skills.card2.title": "Frameworks & Libraries",
+      "skills.card3.title": "Tools & Infrastruktur",
+      "skills.card4.title": "Web-Technologien",
+  
+      // PROJECTS
+      "projects.label": "// Portfolio",
+      "projects.title": "Ausgewählte Projekte",
+      "projects.lead":  "Akademische und berufliche Projekte, die meine technische Bandbreite zeigen.",
+  
+      // EXPERIENCE
+      "exp.label": "// Berufserfahrung",
+      "exp.title": "Stationen",
+      "exp.lead":  "Praxiserfahrung in der Softwareentwicklung — in Deutschland und international.",
+      "exp.job1.title":   "Werkstudent Softwareentwicklung",
+      "exp.job1.company": "Viertel Motoren GmbH · Nürnberg",
+      "exp.job1.li1": "Entwicklung und Wartung interner Softwarelösungen",
+      "exp.job1.li2": "Verwaltung und Pflege von Datenbanken",
+      "exp.job1.li3": "Identifizierung von Prozessoptimierungspotenzialen",
+      "exp.job1.li4": "Fehleranalysen und Unterstützung bei laufenden Projekten",
+      "exp.job2.title":   "Werkstudent Softwareentwicklung",
+      "exp.job2.company": "SOLUTECHN Sarl · Yaoundé, Kamerun",
+      "exp.job2.li1": "Konzeption und Implementierung responsiver Web-Interfaces mit React & Vue.js",
+      "exp.job2.li2": "Design und Optimierung relationaler Datenbankschemata in MySQL",
+      "exp.job2.li3": "Systematische Code-Reviews und Unit-Tests",
+  
+      // CONTACT
+      "contact.label":  "// Kontakt",
+      "contact.title":  "Lass uns reden.",
+      "contact.lead":   "Offen für Vollzeitstellen und spannende Projekte nach dem Masterabschluss.",
+      "contact.github": "Profil ansehen →",
+      "contact.linkedin": "Profil ansehen →",
+      "contact.location": "Erlangen, Bayern",
+      "contact.license":  "Klasse AM / B / L",
+      "contact.form.name":    "Name",
+      "contact.form.email":   "E-Mail",
+      "contact.form.message": "Nachricht",
+      "contact.form.name.placeholder":    "Dein Name",
+      "contact.form.email.placeholder":   "deine@email.com",
+      "contact.form.message.placeholder": "Deine Nachricht...",
+      "contact.form.submit": "Nachricht senden",
+  
+      // FOOTER
+      "footer.text": "Gebaut mit HTML · Tailwind · JavaScript",
+    },
+  
+    en: {
+      // NAV
+      "nav.about":      "About",
+      "nav.skills":     "Skills",
+      "nav.projects":   "Projects",
+      "nav.experience": "Experience",
+      "nav.contact":    "Contact",
+  
+      // HERO
+      "hero.label":   "// Full-Stack Software Engineer",
+      "hero.title1":  "Samuel Jordan",
+      "hero.title2":  "Ouabo",
+      "hero.tagline": "Master's Student in Computer Science · FAU Erlangen-Nürnberg. Specialized in Full-Stack Development & AI Integration.",
+      "hero.cta1":    "View Projects",
+      "hero.cta2":    "Get in Touch →",
+      "hero.card.sub":   "FAU Erlangen-Nürnberg · M.Sc. Computer Science",
+      "hero.card.exp":   "Experience",
+      "hero.card.proj":  "Projects",
+      "hero.card.focus": "Focus",
+      "hero.card.expval":   "Working Student 2+ y.",
+      "hero.card.projval":  "3 Completed",
+      "hero.card.focusval": "Full-Stack + LLM",
+      "hero.badge.open": "Open to new opportunities",
+      "hero.badge.msc":  "M.Sc. Computer Science",
+      "hero.badge.fau":  "FAU Erlangen",
+  
+      // ABOUT
+      "about.label":  "// About Me",
+      "about.title1": "Engineering Software.",
+      "about.title2": "Solving Real Problems.",
+      "about.p1": "I'm Samuel, a Full-Stack Engineer and Master's student in Computer Science at FAU Erlangen-Nürnberg, specializing in Software Engineering and Database Systems. I build scalable, maintainable systems — from database architecture to production-ready user interfaces.",
+      "about.p2": "Through my work as a working student, I've gained real-world project experience and learned to tackle technical complexity with pragmatic solutions. I'm particularly passionate about integrating modern AI models (LLMs) and cloud-native architectures.",
+      "about.p3": "I'm looking for a position where I can solve challenging technical problems, take ownership, and build sustainable software solutions together with a strong team.",
+      "about.stat.exp":   "Years as Working Student",
+      "about.stat.tech":  "Technologies",
+      "about.stat.proj":  "Completed Projects",
+      "about.stat.lang":  "Languages (FR / DE / EN)",
+      "about.thesis.label": "Master's Thesis — In Planning",
+      "about.thesis.text":  "The topic will be determined shortly in consultation with my supervisor. Details to follow.",
+      "about.info.location": "Erlangen, Germany",
+      "about.info.study":    "M.Sc. Computer Science — FAU Erlangen-Nürnberg",
+      "about.info.job":      "Working Student @ Viertel Motoren GmbH",
+      "about.info.lang":     "French · German · English",
+      "about.info.license":  "Class AM / B / L",
+      "about.label.location": "Location",
+      "about.label.study":    "Education",
+      "about.label.job":      "Currently",
+      "about.label.email":    "Email",
+      "about.label.lang":     "Languages",
+      "about.label.license":  "Driver's License",
+  
+      // SKILLS
+      "skills.label":  "// Technical Skills",
+      "skills.title":  "My Toolkit",
+      "skills.lead":   "From database architecture to cloud deployment.",
+      "skills.card1.title": "Programming Languages",
+      "skills.card2.title": "Frameworks & Libraries",
+      "skills.card3.title": "Tools & Infrastructure",
+      "skills.card4.title": "Web Technologies",
+  
+      // PROJECTS
+      "projects.label": "// Portfolio",
+      "projects.title": "Selected Projects",
+      "projects.lead":  "Academic and professional projects showcasing my technical range.",
+  
+      // EXPERIENCE
+      "exp.label": "// Work Experience",
+      "exp.title": "Experience",
+      "exp.lead":  "Hands-on software development experience — in Germany and internationally.",
+      "exp.job1.title":   "Working Student Software Development",
+      "exp.job1.company": "Viertel Motoren GmbH · Nuremberg",
+      "exp.job1.li1": "Development and maintenance of internal software solutions",
+      "exp.job1.li2": "Database management and maintenance",
+      "exp.job1.li3": "Identification of process optimization potential",
+      "exp.job1.li4": "Bug analysis and support on ongoing projects",
+      "exp.job2.title":   "Working Student Software Development",
+      "exp.job2.company": "SOLUTECHN Sarl · Yaoundé, Cameroon",
+      "exp.job2.li1": "Design and implementation of responsive web interfaces with React & Vue.js",
+      "exp.job2.li2": "Design and optimization of relational database schemas in MySQL",
+      "exp.job2.li3": "Systematic code reviews and unit testing",
+  
+      // CONTACT
+      "contact.label":  "// Contact",
+      "contact.title":  "Let's Talk.",
+      "contact.lead":   "Open to full-time positions and exciting projects after my Master's degree.",
+      "contact.github": "View Profile →",
+      "contact.linkedin": "View Profile →",
+      "contact.location": "Erlangen, Bavaria",
+      "contact.license":  "Class AM / B / L",
+      "contact.form.name":    "Name",
+      "contact.form.email":   "Email",
+      "contact.form.message": "Message",
+      "contact.form.name.placeholder":    "Your Name",
+      "contact.form.email.placeholder":   "your@email.com",
+      "contact.form.message.placeholder": "Your message...",
+      "contact.form.submit": "Send Message",
+  
+      // FOOTER
+      "footer.text": "Built with HTML · Tailwind · JavaScript",
+    }
+  };
