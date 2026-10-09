@@ -1,836 +1,655 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samuel Jordan Ouabo — Software Engineer</title>
-  <!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samuel Jordan Ouabo – AI &amp; Software Engineer</title>
+  <meta name="description" content="Samuel Jordan Ouabo – M.Sc.-Student der Informatik an der FAU Erlangen-Nürnberg. Full-Stack-Entwicklung, RAG-Systeme und LLM-Integration.">
+  <meta name="theme-color" content="#F4F5F1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1210" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B6B50'/%3E%3Crect x='6' y='19' width='20' height='6' rx='1' fill='%23D6F35E'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='15' text-anchor='middle' fill='%23ffffff'%3ESO%3C/text%3E%3C/svg%3E">
 
-<!-- Tailwind Output -->
-<link rel="stylesheet" href="css/output.css" />
+  <script>
+    // Sprache vor dem ersten Rendern setzen, damit nichts flackert
+    (function () {
+      var lang = null;
+      try { lang = localStorage.getItem('lang'); } catch (e) {}
+      if (lang !== 'de' && lang !== 'en') {
+        lang = (navigator.language || 'de').toLowerCase().indexOf('de') === 0 ? 'de' : 'en';
+      }
+      document.documentElement.lang = lang;
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Hanken+Grotesk:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
+<!-- Icon-Sprite (Lucide, ISC-Lizenz) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-enter" viewBox="0 0 24 24"><path d="m9 10-5 5 5 5"/><path d="M20 4v7a4 4 0 0 1-4 4H4"/></symbol>
+</svg>
+
+<a class="skip" href="#main">
+  <span lang="de">Zum Inhalt springen</span><span lang="en">Skip to content</span>
+</a>
+
 <!-- ========================
-     NAVIGATION
+     KOPFZEILE
 ========================== -->
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
-    <nav class="max-w-6xl mx-auto px-8 py-4 flex items-center justify-between">
-  
-      <a href="#hero" class="font-serif text-xl text-gray-900 tracking-tight">
-        Samuel Ouabo
-      </a>
-  
-      <!-- Desktop Menu -->
-    <ul class="hidden md:flex gap-8 list-none">
-      <li><a href="#about"     data.i18n="nav.about" class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Über mich</a></li>
-      <li><a href="#skills"  data.i18n="nav.skills"   class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Skills</a></li>
-      <li><a href="#projects" data.i18n="nav.projects"  class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Projekte</a></li>
-      <li><a href="#experience" data.i18n="nav.experience" class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Erfahrung</a></li>
-      <li><a href="#contact"   data.i18n="nav.contact" class="text-sm font-medium text-gray-500 uppercase tracking-widest hover:text-accent transition-colors">Kontakt</a></li>
-    </ul>
+<header class="masthead" id="masthead">
+  <div class="wrap masthead-row">
+    <a class="wordmark" href="#top">Samuel Jordan Ouabo</a>
 
-    <!-- Sprachumschalter -->
-    <button
-    id="lang-toggle"
-    class="hidden md:flex items-center gap-1.5 font-mono text-xs font-medium border border-gray-200 rounded-md px-3 py-1.5 text-gray-500 hover:border-accent hover:text-accent transition-colors"
-    >
-    <span id="lang-label">EN</span>
-    </button>
-
-    <!-- Mobile Burger Button -->
-    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2">
-      <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
-      <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
-      <span class="w-6 h-0.5 bg-gray-700 transition-all"></span>
-    </button>
-  
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#projects"><span lang="de">Projekte</span><span lang="en">Projects</span></a></li>
+        <li><a href="#experience"><span lang="de">Erfahrung</span><span lang="en">Experience</span></a></li>
+        <li><a href="#skills"><span lang="de">Kenntnisse</span><span lang="en">Skills</span></a></li>
+        <li><a href="#education"><span lang="de">Ausbildung</span><span lang="en">Education</span></a></li>
+        <li><a href="#contact"><span lang="de">Kontakt</span><span lang="en">Contact</span></a></li>
+      </ul>
     </nav>
-    <!-- Mobile Menu (versteckt bis Button geklickt) -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
-    <ul class="flex flex-col px-6 py-4 gap-4 list-none">
-      <li><a href="#about"     data.i18n="nav.about" class="text-sm font-medium text-gray-500 uppercase tracking-widest">Über mich</a></li>
-      <li><a href="#skills"    data.i18n="nav.skills" class="text-sm font-medium text-gray-500 uppercase tracking-widest">Skills</a></li>
-      <li><a href="#projects"  data.i18n="nav.projects" class="text-sm font-medium text-gray-500 uppercase tracking-widest">Projekte</a></li>
-      <li><a href="#experience" data.i18n="nav.experience" class="text-sm font-medium text-gray-500 uppercase tracking-widest">Erfahrung</a></li>
-      <li><a href="#contact"   data.i18n="nav.contact" class="text-sm font-medium text-gray-500 uppercase tracking-widest">Kontakt</a></li>
-    </ul>
+
+    <div class="masthead-tools">
+      <div class="lang-switch" role="group" aria-label="Sprache / Language">
+        <button type="button" data-set-lang="de" aria-pressed="true">DE</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="menu-btn" id="menu-btn" aria-controls="nav" aria-expanded="false">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        <span class="sr-only"><span lang="de">Menü</span><span lang="en">Menu</span></span>
+      </button>
+    </div>
   </div>
+</header>
 
-  </header>
-
-  <main>
-
-    <section id="hero" class="min-h-screen bg-gray-50 flex items-center pt-20">
-      <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-    
-        <div>
-          <p data-i18n="hero.label" class="font-mono text-xs text-accent uppercase tracking-widest mb-6">
-            // Full-Stack Software Engineer
-          </p>
-          <h1 class="font-serif text-5xl lg:text-6xl text-gray-900 leading-tight tracking-tight mb-6">
-            Samuel Jordan <br>
-            <span data-i18n="hero.title1" class="italic text-accent">Ouabo</span>
-          </h1>
-          <p data-i18n="hero.tagline" class="text-lg text-gray-500 font-light leading-relaxed mb-10 max-w-md">
-            Master-Student der Informatik · FAU Erlangen-Nürnberg.
-            Spezialisiert auf Software Engineering und Datenbanksysteme.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-            <a data-i18n="hero.cta1" href="#projects" class="bg-accent text-white px-7 py-3 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
-              Projekte ansehen
-            </a>
-            <a data-i18n="hero.cta2" href="#contact" class="text-gray-500 text-sm font-medium border-b border-gray-300 pb-0.5 hover:text-gray-900 transition-colors">
-              Kontakt aufnehmen →
-            </a>
-          </div>
-        </div>
-    
-        <!-- <div class="bg-accent/5 rounded-2xl p-8 flex items-center justify-center">
-          <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-sm">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white font-serif text-lg flex-shrink-0">
-                SJ
-              </div>
-              <div>
-                <p class="font-semibold text-sm text-gray-900">Samuel Jordan Ouabo</p>
-                <p class="text-xs text-gray-400 mt-0.5">FAU Erlangen-Nürnberg · M.Sc. Informatik</p>
-              </div>
-            </div>
-            <hr class="border-gray-100 mb-6">
-            <div class="space-y-3 mb-6">
-              <div class="flex justify-between">
-                <span class="text-xs text-gray-400">Erfahrung</span>
-                <span class="font-mono text-xs text-accent font-medium">3+ Jahre</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-xs text-gray-400">Projekte</span>
-                <span class="font-mono text-xs text-accent font-medium">3 Abgeschlossen</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-xs text-gray-400">Fokus</span>
-                <span class="font-mono text-xs text-accent font-medium">Full-Stack + LLM</span>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Java</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">TypeScript</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Vue.js</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Docker</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-2 py-1 rounded">Node.js</span>
-            </div>
-          </div>
-        </div> -->
-        <!-- Rechte Seite: Profilbild -->
-        <div class="flex items-center justify-center">
-          <div class="relative">
-
-            <!-- Dekoratives Element hinter dem Bild -->
-            <div class="absolute -inset-4 bg-accent/10 rounded-3xl -rotate-3"></div>
-
-            <!-- Profilbild -->
-            <img
-              src="assets/images/profile.jpg"
-              alt="Samuel Jordan Ouabo"
-              class="relative w-72 h-80 lg:w-80 lg:h-96 object-cover object-top rounded-2xl shadow-xl"
-            />
-
-            <!-- Badge unten links -->
-            <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg px-4 py-3 flex items-center gap-3">
-              <div class="w-3 h-3 rounded-full bg-green-400 animate-pulse"></div>
-              <p data-i18n="hero.badge.open" class="text-xs font-medium text-gray-700">Offen für neue Stellen</p>
-            </div>
-
-            <!-- Badge oben rechts -->
-            <div class="absolute -top-4 -right-4 bg-accent text-white rounded-xl shadow-lg px-4 py-3">
-              <p class="font-mono text-xs font-medium">M.Sc. Informatik</p>
-              <p class="font-mono text-xs text-white/70">FAU Erlangen</p>
-            </div>
-
-          </div>
-        </div>
-    
-      </div>
-    </section>
+<main id="main">
 
 <!-- ========================
-     ÜBER MICH
+     HERO + SUCHE
 ========================== -->
-<section id="about" class="bg-white py-24">
-    <div class="max-w-6xl mx-auto px-8">
-  
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-  
-        <!-- Linke Seite: Text -->
-        <div>
-          <p data-i18n="about.label" class="font-mono text-xs text-accent uppercase tracking-widest mb-3">
-            // Über mich
-          </p>
-          <h2 data-i18n="about.title1" class="font-serif text-4xl text-gray-900 leading-tight tracking-tight mb-8">
-            Software Engineer. <br>
-            <span data-i18n="about.title2" class="italic">Solving Real Problems</span>
-          </h2>
-  
-          <div class="space-y-4 text-gray-500 leading-relaxed">
-            <p data-i18n="about.p1">
-              Ich bin Samuel, Masterstudent der Informatik an der FAU Erlangen-Nürnberg
-              mit Vertiefung in Software Engineering und Datenbanksystemen. Mein Fokus
-              liegt auf der Entwicklung robuster Full-Stack-Lösungen — von der
-              Datenbankarchitektur bis zur responsiven Benutzeroberfläche.
-            </p>
-            <p data-i18n="about.p2">
-              Durch meine Tätigkeit als Werkstudent habe ich reale Projekterfahrung
-              gesammelt und dabei gelernt, technische Komplexität mit pragmatischen
-              Lösungen zu begegnen. Mein besonderes Interesse gilt der Integration
-              moderner KI-Modelle (LLMs) und modernen Cloud-Architekturen.
-            </p>
-            <p data-i18n="about.p3">
-              Als teamorientierter Entwickler suche ich eine Position, in der 
-              ich anspruchsvolle technischeHerausforderungen löse, Verantwortung übernehme
-              und gemeinsam mit einem starken Team nachhaltige Softwarelösungen gestalte.
-  
-            </p>
-          </div>
-  
-          <!-- Stats -->
-          <div class="grid grid-cols-2 gap-4 mt-10 w-full">
-            <div class="border border-gray-100 rounded-xl p-5 min-v-0">
-              <p class="font-serif text-4xl text-accent leading-none">2+</p>
-              <p class="text-xs text-gray-400 mt-1">Jahre Werkstudent</p>
-            </div>
-            <div class="border border-gray-100 rounded-xl p-5 min-v-0">
-              <p class="font-serif text-4xl text-accent leading-none">15+</p>
-              <p class="text-xs text-gray-400 mt-1">Technologien</p>
-            </div>
-            <div class="border border-gray-100 rounded-xl p-5 min-v-0">
-              <p class="font-serif text-4xl text-accent leading-none">3+</p>
-              <p class="text-xs text-gray-400 mt-1">Abgeschlossene Projekte</p>
-            </div>
-            <div class="border border-gray-100 rounded-xl p-5 min-v-0">
-              <p class="font-serif text-4xl text-accent leading-none">3</p>
-              <p class="text-xs text-gray-400 mt-1">Sprachen (FR / DE / EN)</p>
-            </div>
-          </div>
-  
-          <!-- Thesis Banner -->
-          <div class="mt-8 border border-dashed border-accent bg-accent/5 rounded-xl p-4 flex gap-3 items-start w-full overflow-hidden">
-            <span class="text-2xl">🎓</span>
-            <div>
-              <p data-i18n="about.thesis.label" class="font-mono text-xs text-accent uppercase tracking-wider mb-1">
-                Masterarbeit — in Planung
-              </p>
-              <p data-i18n="about.thesis.text" class="text-sm text-gray-500">
-                Das Thema wird in Kürze in Absprache mit meinem Betreuer festgelegt.
-                Details folgen.
-              </p>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Rechte Seite: Infos -->
-        <div class="divide-y divide-gray-100">
-  
-          <div class="flex gap-4 items-start py-4">
-            <div class="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-base flex-shrink-0">📍</div>
-            <div>
-              <p class="text-xs text-gray-400 mb-0.5">Standort</p>
-              <p class="text-sm font-medium text-gray-900">Erlangen, Deutschland</p>
-            </div>
-          </div>
-  
-          <div class="flex gap-4 items-start py-4">
-            <div class="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-base flex-shrink-0">🎓</div>
-            <div>
-              <p class="text-xs text-gray-400 mb-0.5">Studium</p>
-              <p class="text-sm font-medium text-gray-900">M.Sc. Informatik — FAU Erlangen-Nürnberg</p>
-            </div>
-          </div>
-  
-          <div class="flex gap-4 items-start py-4">
-            <div class="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-base flex-shrink-0">💼</div>
-            <div>
-              <p class="text-xs text-gray-400 mb-0.5">Aktuell</p>
-              <p class="text-sm font-medium text-gray-900">Studentische Hilfskraft bei Universitätsklinikum Erlangen</p>
-            </div>
-          </div>
-  
-          <div class="flex gap-4 items-start py-4">
-            <div class="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-base flex-shrink-0">📧</div>
-            <div>
-              <p class="text-xs text-gray-400 mb-0.5">E-Mail</p>
-              <p class="text-sm font-medium text-gray-900">ouabosamuel10@gmail.com</p>
-            </div>
-          </div>
-  
-          <div class="flex gap-4 items-start py-4">
-            <div class="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-base flex-shrink-0">🌍</div>
-            <div>
-              <p class="text-xs text-gray-400 mb-0.5">Sprachen</p>
-              <p class="text-sm font-medium text-gray-900">Deutsch · Englisch · Französisch</p>
-            </div>
-          </div>
-  
-          <div class="flex gap-4 items-start py-4">
-            <div class="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-base flex-shrink-0">🚗</div>
-            <div>
-              <p class="text-xs text-gray-400 mb-0.5">Führerschein</p>
-              <p class="text-sm font-medium text-gray-900">Klasse AM / B / L</p>
-            </div>
-          </div>
-  
-        </div>
-          </div>
-        </div>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+
+    <div class="hero-copy">
+      <h1 class="display">
+        <span lang="de">Software, die aus Dokumenten <em>Antworten</em> macht.</span>
+        <span lang="en">Software that turns documents into <em>answers</em>.</span>
+      </h1>
+      <p class="hero-lead">
+        <span lang="de">Ich bin Samuel, Masterstudent der Informatik an der FAU Erlangen-Nürnberg (Abschluss voraussichtlich Dezember&nbsp;2026). Ich entwickle Full-Stack-Anwendungen und integriere LLM-Funktionen. In meiner Masterarbeit baue und evaluiere ich ein lokal gehostetes RAG-System.</span>
+        <span lang="en">I'm Samuel, a Master's student in Computer Science at FAU Erlangen-Nürnberg (expected to graduate December&nbsp;2026). I build full-stack applications and integrate LLM features. For my Master's thesis I'm building and evaluating a locally hosted RAG system.</span>
+      </p>
+      <p class="hero-open">
+        <span class="dot" aria-hidden="true"></span>
+        <span lang="de">Offen für Einstiegspositionen als AI Engineer, LLM Engineer oder Software Engineer</span>
+        <span lang="en">Open to entry-level roles as AI Engineer, LLM Engineer or Software Engineer</span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">
+          <span lang="de">Kontakt aufnehmen</span><span lang="en">Get in touch</span>
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+        <a class="btn btn-quiet" href="https://github.com/so77nava" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-quiet" href="https://www.linkedin.com/in/samuel-jordan-ouabo-739465313/" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+          LinkedIn
+        </a>
       </div>
     </div>
-  </section>
+
+    <!-- Retrieval-Konsole: durchsucht die Abschnitte dieser Seite -->
+    <div class="console" id="console">
+      <form class="console-form" id="search-form" role="search">
+        <label class="console-label" for="q">
+          <span lang="de">Durchsuche meinen Werdegang</span><span lang="en">Search my background</span>
+        </label>
+        <div class="console-input">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+          <input id="q" name="q" type="search" autocomplete="off" spellcheck="false"
+                 data-ph-de="z. B. RAG, Angular, Docker …" data-ph-en="e.g. RAG, Angular, Docker …"
+                 placeholder="z. B. RAG, Angular, Docker …">
+          <button type="submit" class="console-go">
+            <span class="sr-only"><span lang="de">Suchen</span><span lang="en">Search</span></span>
+            <svg class="icon" aria-hidden="true"><use href="#i-enter"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <div class="console-suggest">
+        <span class="console-suggest-label"><span lang="de">Probier</span><span lang="en">Try</span></span>
+        <button type="button" class="chip" data-q="RAG">RAG</button>
+        <button type="button" class="chip" data-q="OCR">OCR</button>
+        <button type="button" class="chip" data-q="Angular">Angular</button>
+        <button type="button" class="chip" data-q="Docker">Docker</button>
+        <button type="button" class="chip" data-q-de="Lehre" data-q-en="Teaching"><span lang="de">Lehre</span><span lang="en">Teaching</span></button>
+      </div>
+
+      <div class="console-status" id="search-status" aria-live="polite"></div>
+      <ol class="results" id="results"></ol>
+
+      <p class="console-note">
+        <span lang="de">Lokale BM25-Suche über die Abschnitte dieser Seite. Kein LLM, nichts verlässt deinen Browser.</span>
+        <span lang="en">Local BM25 search across the sections of this page. No LLM, nothing leaves your browser.</span>
+      </p>
+    </div>
+
+  </div>
+</section>
 
 <!-- ========================
-     SKILLS
+     PROFIL
 ========================== -->
-<section id="skills" class="bg-gray-50 py-24">
-    <div class="max-w-6xl mx-auto px-8">
-  
-      <p data-i18n="skills.label" class="font-mono text-xs text-accent uppercase tracking-widest mb-3">
-        // Technische Kompetenzen
-      </p>
-      <h2 data-i18n="skills.title" class="font-serif text-4xl text-gray-900 tracking-tight mb-4">
-        Meine Werkzeuge
-      </h2>
-      <p data-i18n="skills.lead" class="text-gray-500 text-lg font-light mb-12 max-w-xl">
-        Von der Datenbankarchitektur bis zum Cloud-Deployment.
-      </p>
-  
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-  
-        <!-- Card 1: Sprachen -->
-        <div class="bg-white border border-gray-100 rounded-xl p-7 hover:shadow-md transition-shadow">
-          <p class="font-mono text-xs text-accent uppercase tracking-widest mb-1">Languages</p>
-          <h3 data-i18n="skills.card1.title" class="font-serif text-xl text-gray-900 mb-6">Programmiersprachen</h3>
-          <ul class="space-y-3">
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Java</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-green-100 text-green-800">Herausragend</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">JavaScript / TypeScript</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-accent/10 text-accent">Fließend</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">HTML & CSS</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-accent/10 text-accent">Fließend</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">C#</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Python</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-gray-100 text-gray-500">Basiswissen</span>
-            </li>
-          </ul>
-        </div>
-  
-        <!-- Card 2: Frameworks -->
-        <div class="bg-white border border-gray-100 rounded-xl p-7 hover:shadow-md transition-shadow">
-          <p class="font-mono text-xs text-accent uppercase tracking-widest mb-1">Frameworks</p>
-          <h3 data-i18n="skills.card2.title" class="font-serif text-xl text-gray-900 mb-6">Frameworks & Libraries</h3>
-          <ul class="space-y-3">
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Vue.js</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-green-100 text-green-800">Herausragend</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">ASP.NET Core</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-accent/10 text-accent">Fließend</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Node.js / Express</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-accent/10 text-accent">Fließend</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Angular</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Bootstrap</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
-            </li>
-          </ul>
-        </div>
-  
-        <!-- Card 3: Tools & DevOps -->
-        <div class="bg-white border border-gray-100 rounded-xl p-7 hover:shadow-md transition-shadow">
-          <p class="font-mono text-xs text-accent uppercase tracking-widest mb-1">Tools & DevOps</p>
-          <h3 data-i18n="skills.card3.title" class="font-serif text-xl text-gray-900 mb-6">Tools & Infrastruktur</h3>
-          <ul class="space-y-3">
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Docker</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-accent/10 text-accent">Fließend</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Git / GitHub</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-accent/10 text-accent">Fließend</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">PostgreSQL / MySQL</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-green-100 text-green-800">Fundiert</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">MongoDB</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">nginx</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Webpack</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">Kubernetes</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-gray-100 text-gray-500">Basiswissen</span>
-            </li>
-            <li class="flex items-center justify-between">
-              <span class="text-sm text-gray-700">OpenStack</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-gray-100 text-gray-500">Basiswissen</span>
-            </li>
-          </ul>
-        </div>
+<section class="section" id="about" aria-labelledby="about-h">
+  <div class="wrap profile">
+    <figure class="portrait">
+      <img src="assets/images/profile.jpg" width="720" height="1280" alt="Porträt von Samuel Jordan Ouabo" loading="lazy" decoding="async">
+    </figure>
 
-        <!-- Card 4: Web & Protokolle -->
-      <div class="bg-white border border-gray-100 rounded-xl p-7 hover:shadow-md transition-shadow">
-        <p class="font-mono text-xs text-accent uppercase tracking-widest mb-1">Web & Protokolle</p>
-        <h3 data-i18n="skills.card4.title" class="font-serif text-xl text-gray-900 mb-6">Web-Technologien</h3>
-        <ul class="space-y-3">
-          <li class="flex items-center justify-between">
-            <span class="text-sm text-gray-700">WebSockets</span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded bg-green-100 text-green-800">Fundiert</span>
-          </li>
-          <li class="flex items-center justify-between">
-            <span class="text-sm text-gray-700">REST APIs</span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded bg-green-100 text-green-800">Fundiert</span>
-          </li>
-          <li class="flex items-center justify-between">
-            <span class="text-sm text-gray-700">WebRTC</span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
-          </li>
-          <li class="flex items-center justify-between">
-            <span class="text-sm text-gray-700">TypeScript</span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
-          </li>
-          <li class="flex items-center justify-between">
-            <span class="text-sm text-gray-700">WebAssembly</span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded bg-gray-100 text-gray-500">Basiswissen</span>
-          </li>
-          <li class="flex items-center justify-between">
-            <span class="text-sm text-gray-700">Ollama (LLM)</span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded bg-yellow-100 text-yellow-800">Praxiserprobt</span>
-          </li>
-        </ul>
+    <div class="profile-body" data-entry>
+      <h2 class="h2 entry-title" id="about-h"><span lang="de">Profil</span><span lang="en">Profile</span></h2>
+      <div class="prose" data-chunk>
+        <p lang="de">Masterstudent der Informatik an der FAU Erlangen-Nürnberg mit Vertiefung in Software Engineering und Datenbanksystemen. Ich habe praktische Erfahrung in der Full-Stack-Entwicklung und darin, LLM-Funktionen in produktive Anwendungen zu integrieren: von OCR-Pipelines über Multi-Tenant-Backends bis zur Echtzeit-KI-Rückmeldung im klinischen Umfeld.</p>
+        <p lang="en">Master's student in Computer Science at FAU Erlangen-Nürnberg, specialising in Software Engineering and Database Systems. I have hands-on experience in full-stack development and in integrating LLM features into production applications: from OCR pipelines and multi-tenant backends to real-time AI feedback in a clinical setting.</p>
       </div>
-        
+      <div class="prose" data-chunk>
+        <p lang="de">Was mich antreibt: Systeme, die mit echten, unordentlichen Dokumenten zurechtkommen, ihre Quellen offenlegen und dabei datenschutzkonform bleiben. Neben der Entwicklung leite ich Übungsgruppen an der FAU und erkläre technische Inhalte für Studierende ohne Informatik-Hauptfach.</p>
+        <p lang="en">What drives me: systems that cope with real, messy documents, show their sources and stay privacy-compliant. Alongside development I teach exercise groups at FAU, explaining technical topics to students outside computer science.</p>
       </div>
+
+      <dl class="facts">
+        <div>
+          <dt><span lang="de">Standort</span><span lang="en">Location</span></dt>
+          <dd><span lang="de">Erlangen, Deutschland</span><span lang="en">Erlangen, Germany</span></dd>
+        </div>
+        <div>
+          <dt><span lang="de">Abschluss</span><span lang="en">Graduation</span></dt>
+          <dd><span lang="de">M.Sc. Informatik, vsl. Dez. 2026</span><span lang="en">M.Sc. Computer Science, exp. Dec 2026</span></dd>
+        </div>
+        <div>
+          <dt><span lang="de">Sprachen</span><span lang="en">Languages</span></dt>
+          <dd><span lang="de">Französisch (Muttersprache), Deutsch (sehr gut, TestDaF), Englisch (gut)</span><span lang="en">French (native), German (very good, TestDaF), English (good)</span></dd>
+        </div>
+        <div>
+          <dt><span lang="de">Führerschein</span><span lang="en">Driving licence</span></dt>
+          <dd><span lang="de">Klasse AM / B / L</span><span lang="en">Class AM / B / L</span></dd>
+        </div>
+      </dl>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- ========================
      PROJEKTE
 ========================== -->
-<section id="projects" class="bg-white py-24">
-    <div class="max-w-6xl mx-auto px-8">
-  
-      <p data-i18n="projects.label" class="font-mono text-xs text-accent uppercase tracking-widest mb-3">
-        // Portfolio
+<section class="section section-alt" id="projects" aria-labelledby="projects-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="h2" id="projects-h"><span lang="de">Projekte</span><span lang="en">Projects</span></h2>
+      <p class="section-lead">
+        <span lang="de">Von der Masterarbeit bis zum Bachelorprojekt, neueste zuerst.</span>
+        <span lang="en">From my Master's thesis back to my Bachelor's project, newest first.</span>
       </p>
-      <h2 data-i18n="projects.title" class="font-serif text-4xl text-gray-900 tracking-tight mb-4">
-        Ausgewählte Projekte
-      </h2>
-      <p data-i18n="projects.lead" class="text-gray-500 text-lg font-light mb-12 max-w-xl">
-        Akademische und berufliche Projekte, die meine technische Bandbreite zeigen.
-      </p>
-  
-      <div class="space-y-6">
-        <!-- Projekt 1 -->
-        <article class="project-card border border-gray-100 rounded-2xl p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 lg:gap-8 items-start hover:shadow-md transition-shadow">
-          <div>
-            <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">
-              // Universitätsprojekt · FAU Erlangen-Nürnberg
-            </p>
-            <h3 class="font-serif text-2xl text-gray-900 tracking-tight mb-1">
-              WebChat — Vollständige Chat-Anwendung
-            </h3>
-            <p class="text-sm text-accent font-medium mb-4">
-              FAU Erlangen-Nürnberg · Web-basierte Systeme WS 2025/2026
-            </p>
-            <p class="text-gray-500 text-sm leading-relaxed mb-5">
-              Vollständige Chat-Anwendung, schrittweise über ein Semester entwickelt —
-              von einem einfachen JavaScript-Client bis hin zu einer produktionsreifen,
-              cloud-deployed Architektur mit Echtzeit-Kommunikation, KI-Features und
-              sicherer Peer-to-Peer-Verbindung.
-            </p>
-            <ul class="space-y-2 mb-6">
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Echtzeit-Chat via WebSockets mit Typing Notifications und Desktop-Benachrichtigungen
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Secret Messaging Modus via WebRTC (PeerJS) — direkte P2P-Verbindung ohne Server
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Rechtschreibprüfung (TypeScript) & Wortvorhersage via WebAssembly (Rust/Markov)
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                REST API + WebSocket-Server mit Node.js, Express & MongoDB (persistente Datenhaltung)
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Deployment in OpenStack (RRZE Cloud) mit Docker, nginx Reverse Proxy & docker-compose
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Giphy API Integration & JavaScript-Bundling mit Webpack
-              </li>
-            </ul>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">JavaScript</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">TypeScript</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">WebSockets</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">WebRTC</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">WebAssembly</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Node.js</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Express</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">MongoDB</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">nginx</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Docker</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Webpack</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">OpenStack</span>
-            </div>
-          </div>
-          <p class="font-mono text-xs text-gray-400 lg:whitespace-nowrap lg:pt-1">
-            Okt. 2025 – Jan. 2026
-          </p>
-        </article>
-        <!-- Projekt 2 -->
-        <article class="project-card border border-gray-100 rounded-2xl p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 lg:gap-8 items-start hover:shadow-md transition-shadow">
-          <div>
-            <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">
-              // Akademisches Projekt · FAU
-            </p>
-            <h3 class="font-serif text-2xl text-gray-900 tracking-tight mb-1">
-              Intelligent Document Management System
-            </h3>
-            <p class="text-sm text-accent font-medium mb-4">
-              FAU Erlangen-Nürnberg — Rolle: Full-Stack & AI-Integration Developer
-            </p>
-            <p class="text-gray-500 text-sm leading-relaxed mb-5">
-              Intelligentes Dokumentenmanagement-System mit automatisierter Klassifizierung
-              von Bauunterlagen, LLM-gestützter semantischer Analyse und interaktiver
-              Chat-Funktion für effizienten Wissenszugriff.
-            </p>
-            <ul class="space-y-2 mb-6">
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Automatisierte Pipeline via Ollama (LLM) + Apache Tika & Tesseract OCR
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                C# / ASP.NET Core Backend mit Multi-Tenant-Architektur & PostgreSQL 17
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Angular 19 SPA mit JWT-Authentifizierung und RBAC
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Docker Containerisierung + CI/CD via GitHub Actions
-              </li>
-            </ul>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">C#</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">ASP.NET Core</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Angular 19</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">PostgreSQL</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Ollama</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Docker</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">GitHub Actions</span>
-            </div>
-          </div>
-          <p class="font-mono text-xs text-gray-400 lg:whitespace-nowrap lg:pt-1">
-            Apr. 2025 – Jul. 2025
-          </p>
-        </article>
-  
-        <!-- Projekt 3 -->
-        <article class="project-card border border-gray-100 rounded-2xl p-6 lg:p-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-4 lg:gap-8 items-start hover:shadow-md transition-shadow">
-          <div>
-            <p class="font-mono text-xs text-accent uppercase tracking-widest mb-2">
-              // Bachelor-Abschlussprojekt
-            </p>
-            <h3 class="font-serif text-2xl text-gray-900 tracking-tight mb-1">
-              SmartEDU — E-Library Management System
-            </h3>
-            <p class="text-sm text-accent font-medium mb-4">
-              Universität Yaoundé I — Rolle: Full-Stack Entwickler & System-Architekt
-            </p>
-            <p class="text-gray-500 text-sm leading-relaxed mb-5">
-              Vollständige E-Library-Plattform auf Basis einer Microservice-Architektur,
-              mit separaten Diensten für Authentifizierung, Dokumentenmanagement
-              und Benutzerverwaltung.
-            </p>
-            <ul class="space-y-2 mb-6">
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Node.js / Express REST-API mit JWT + Bcrypt-Authentifizierung
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Vue.js + Vuex Dashboard für Studenten, Dozenten & Administratoren
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Docker + Kubernetes Cluster, CI/CD via Jenkins & GitHub
-              </li>
-              <li class="text-sm text-gray-500 pl-4 relative before:content-['→'] before:absolute before:left-0 before:text-accent">
-                Unit-Tests mit Jest, Code-Qualität mit ESLint
-              </li>
-            </ul>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Vue.js</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Node.js</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">MySQL</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Docker</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Kubernetes</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Jenkins</span>
-              <span class="bg-gray-100 text-gray-600 font-mono text-xs px-3 py-1 rounded">Jest</span>
-            </div>
-          </div>
-          <p class="font-mono text-xs text-gray-400 lg:whitespace-nowrap lg:pt-1">
-            März – Jun. 2022
-          </p>
-        </article>
-  
+    </header>
+
+    <!-- KILEAS: hervorgehoben -->
+    <article class="entry entry-feature" data-entry id="kileas">
+      <div class="entry-meta">
+        <p class="when"><span lang="de">Juni – Dez. 2026</span><span lang="en">Jun – Dec 2026</span></p>
+        <p class="status"><span lang="de">In Arbeit</span><span lang="en">In progress</span></p>
       </div>
-    </div>
-  </section>
+      <div class="entry-body">
+        <h3 class="h3 entry-title">
+          <span lang="de">KILEAS – RAG-System für schulische Lernunterstützung</span>
+          <span lang="en">KILEAS – a RAG system for school learning support</span>
+        </h3>
+        <p class="entry-role">
+          <span lang="de">Masterarbeit · FAU Erlangen-Nürnberg · mit Pilotgymnasium und Industriepartner</span>
+          <span lang="en">Master's thesis · FAU Erlangen-Nürnberg · with a pilot grammar school and an industry partner</span>
+        </p>
+        <p class="entry-lead" data-chunk>
+          <span lang="de">Design, Implementierung und Evaluation eines RAG-Systems, ausgerichtet am bayerischen LehrplanPLUS.</span>
+          <span lang="en">Design, implementation and evaluation of a RAG system aligned with the Bavarian LehrplanPLUS curriculum.</span>
+        </p>
+
+        <figure class="pipeline">
+          <ol class="pipeline-steps">
+            <li><span class="step-k"><span lang="de">Quelle</span><span lang="en">Source</span></span><span lang="de">Lehrmaterial als PDF &amp; Scan</span><span lang="en">Teaching material as PDF &amp; scan</span></li>
+            <li><span class="step-k">Parsing</span>OCR · Layout · <span lang="de">multimodal</span><span lang="en">multimodal</span></li>
+            <li><span class="step-k"><span lang="de">Index</span><span lang="en">Index</span></span>ChromaDB</li>
+            <li><span class="step-k"><span lang="de">Modell</span><span lang="en">Model</span></span><span lang="de">Mistral 7B, lokal</span><span lang="en">Mistral 7B, local</span></li>
+            <li class="is-out"><span class="step-k"><span lang="de">Ausgabe</span><span lang="en">Output</span></span><span lang="de">Antwort mit Quellen</span><span lang="en">Answer with sources</span></li>
+          </ol>
+          <p class="pipeline-eval">
+            <span class="step-k">Evaluation</span>
+            <span lang="de">RAGAS · Bewertung durch Lehrkräfte · Garak gegen Prompt Injection</span>
+            <span lang="en">RAGAS · teacher ratings · Garak against prompt injection</span>
+          </p>
+          <figcaption class="sr-only"><span lang="de">Schema der KILEAS-Pipeline</span><span lang="en">Schematic of the KILEAS pipeline</span></figcaption>
+        </figure>
+
+        <ul class="points">
+          <li data-chunk><span lang="de">Vergleich von Dokumentenverarbeitungs-Pipelines: klassisches OCR vs. Layout-Parsing vs. multimodal (Surya, Docling, LLaVA)</span><span lang="en">Comparison of document-processing pipelines: classic OCR vs. layout parsing vs. multimodal (Surya, Docling, LLaVA)</span></li>
+          <li data-chunk><span lang="de">DSGVO-konformes, lokales Hosting mit Mistral 7B; Vektorsuche mit ChromaDB</span><span lang="en">GDPR-compliant local hosting with Mistral 7B; vector search with ChromaDB</span></li>
+          <li data-chunk><span lang="de">Sicherheitsevaluation gegen Prompt Injection mit Garak; Qualitätsbewertung mit RAGAS und durch Lehrkräfte</span><span lang="en">Security evaluation against prompt injection with Garak; quality assessment with RAGAS and by teachers</span></li>
+        </ul>
+        <ul class="tags" data-chunk aria-label="Technologien">
+          <li>Python</li><li>LangChain</li><li>Mistral 7B</li><li>ChromaDB</li><li>RAGAS</li><li>Garak</li><li>Docker</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry" data-entry id="dms">
+      <div class="entry-meta">
+        <p class="when"><span lang="de">Apr. – Juli 2025</span><span lang="en">Apr – Jul 2025</span></p>
+      </div>
+      <div class="entry-body">
+        <h3 class="h3 entry-title">
+          <span lang="de">Intelligentes Dokumentenmanagement-System</span>
+          <span lang="en">Intelligent document management system</span>
+        </h3>
+        <p class="entry-role">
+          <span lang="de">Backend &amp; AI-Integration Developer · FAU Erlangen-Nürnberg</span>
+          <span lang="en">Backend &amp; AI integration developer · FAU Erlangen-Nürnberg</span>
+        </p>
+        <ul class="points">
+          <li data-chunk><span lang="de">Automatisierte Klassifizierung von Bauunterlagen mit LLM (gemma3:1b via Ollama), Apache Tika und Tesseract OCR für mehrsprachige Dokumente (DE/EN/FR)</span><span lang="en">Automated classification of construction documents using an LLM (gemma3:1b via Ollama), Apache Tika and Tesseract OCR for multilingual documents (DE/EN/FR)</span></li>
+          <li data-chunk><span lang="de">Backend mit C#/ASP.NET Core und PostgreSQL 17 inkl. Multi-Tenant-Architektur zur sicheren Datenisolation; REST-API abgesichert durch JWT und feingranulares RBAC</span><span lang="en">Backend in C#/ASP.NET Core and PostgreSQL 17 with a multi-tenant architecture for secure data isolation; REST API secured with JWT and fine-grained RBAC</span></li>
+          <li data-chunk><span lang="de">SPA mit Angular 19 und TypeScript inkl. LLM-gestützter Chat-Funktion für den Wissenszugriff auf Dokumente</span><span lang="en">SPA in Angular 19 and TypeScript, including an LLM-powered chat for knowledge access to documents</span></li>
+          <li data-chunk><span lang="de">Containerisierung mit Docker, CI/CD über GitHub Actions, typsichere API-Clients über OpenAPI/Swagger</span><span lang="en">Containerised with Docker, CI/CD via GitHub Actions, type-safe API clients via OpenAPI/Swagger</span></li>
+        </ul>
+        <ul class="tags" data-chunk aria-label="Technologien">
+          <li>C#</li><li>ASP.NET Core</li><li>PostgreSQL</li><li>Angular 19</li><li>TypeScript</li><li>Ollama</li><li>Tesseract OCR</li><li>Apache Tika</li><li>Docker</li><li>GitHub Actions</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry" data-entry id="webchat">
+      <div class="entry-meta">
+        <p class="when"><span lang="de">Okt. 2025 – Jan. 2026</span><span lang="en">Oct 2025 – Jan 2026</span></p>
+      </div>
+      <div class="entry-body">
+        <h3 class="h3 entry-title">
+          <span lang="de">Echtzeit-Chat-Anwendung</span>
+          <span lang="en">Real-time chat application</span>
+        </h3>
+        <p class="entry-role">
+          <span lang="de">Full-Stack-Entwickler · FAU Erlangen-Nürnberg</span>
+          <span lang="en">Full-stack developer · FAU Erlangen-Nürnberg</span>
+        </p>
+        <ul class="points">
+          <li data-chunk><span lang="de">Über ein Semester schrittweise entwickelt: vom einfachen JavaScript-Client zur cloud-deployten Architektur</span><span lang="en">Built step by step over one semester: from a plain JavaScript client to a cloud-deployed architecture</span></li>
+          <li data-chunk><span lang="de">Echtzeit-Kommunikation über WebSockets (Typing Notifications, Desktop-Benachrichtigungen) und P2P-Modus über WebRTC (PeerJS)</span><span lang="en">Real-time messaging over WebSockets (typing notifications, desktop notifications) and a peer-to-peer mode over WebRTC (PeerJS)</span></li>
+          <li data-chunk><span lang="de">Rechtschreibprüfung in TypeScript, Wortvorhersage über WebAssembly (Rust, Markov-Modell), Giphy-Integration</span><span lang="en">Spell checking in TypeScript, word prediction via WebAssembly (Rust, Markov model), Giphy integration</span></li>
+          <li data-chunk><span lang="de">Backend mit Node.js, Express und MongoDB; Deployment in der OpenStack-Cloud des RRZE mit Docker, nginx und docker-compose</span><span lang="en">Backend in Node.js, Express and MongoDB; deployed to the RRZE OpenStack cloud with Docker, nginx and docker-compose</span></li>
+        </ul>
+        <ul class="tags" data-chunk aria-label="Technologien">
+          <li>JavaScript</li><li>TypeScript</li><li>WebSockets</li><li>WebRTC</li><li>WebAssembly</li><li>Rust</li><li>Node.js</li><li>Express</li><li>MongoDB</li><li>nginx</li><li>Docker</li><li>OpenStack</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry" data-entry id="smartedu">
+      <div class="entry-meta">
+        <p class="when">2022</p>
+      </div>
+      <div class="entry-body">
+        <h3 class="h3 entry-title">
+          <span lang="de">SmartEDU – E-Library-Plattform</span>
+          <span lang="en">SmartEDU – e-library platform</span>
+        </h3>
+        <p class="entry-role">
+          <span lang="de">Bachelor-Abschlussprojekt · Université de Yaoundé I</span>
+          <span lang="en">Bachelor's final project · Université de Yaoundé I</span>
+        </p>
+        <ul class="points">
+          <li data-chunk><span lang="de">E-Library-Plattform auf Basis einer Microservice-Architektur mit getrennten Diensten für Authentifizierung, Dokumentenverwaltung und Benutzerverwaltung</span><span lang="en">E-library platform built on a microservice architecture with separate services for authentication, document management and user management</span></li>
+          <li data-chunk><span lang="de">REST-API mit Node.js und Express, Authentifizierung über JWT; Dashboard in Vue.js für Studierende, Lehrende und Administration</span><span lang="en">REST API in Node.js and Express with JWT authentication; Vue.js dashboard for students, lecturers and administrators</span></li>
+          <li data-chunk><span lang="de">Betrieb mit Docker und Kubernetes, Daten in MySQL</span><span lang="en">Run on Docker and Kubernetes, data in MySQL</span></li>
+        </ul>
+        <ul class="tags" data-chunk aria-label="Technologien">
+          <li>Node.js</li><li>Vue.js</li><li>MySQL</li><li>Docker</li><li>Kubernetes</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
 
 <!-- ========================
      ERFAHRUNG
 ========================== -->
-<section id="experience" class="bg-gray-50 py-24">
-    <div class="max-w-6xl mx-auto px-8">
-  
-      <p data-i18n="exp.label" class="font-mono text-xs text-accent uppercase tracking-widest mb-3">
-        // Berufserfahrung
+<section class="section" id="experience" aria-labelledby="experience-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="h2" id="experience-h"><span lang="de">Erfahrung</span><span lang="en">Experience</span></h2>
+      <p class="section-lead">
+        <span lang="de">Entwicklung im klinischen und industriellen Umfeld, dazu Lehre an der Universität.</span>
+        <span lang="en">Development in clinical and industrial settings, plus university teaching.</span>
       </p>
-      <h2 data-i18n="exp.title" class="font-serif text-4xl text-gray-900 tracking-tight mb-4">
-        Stationen
-      </h2>
-      <p data-i18n="exp.lead" class="text-gray-500 text-lg font-light mb-12 max-w-xl">
-        Praxiserfahrung in der Softwareentwicklung — in Deutschland und international.
-      </p>
-  
-      <!-- Timeline -->
-      <div class="relative pl-8 border-l border-gray-200 space-y-12">
-  
-        <!-- Job 1 -->
-        <article class="exp-item relative">
-          <div class="absolute -left-[2.35rem] top-1.5 w-3 h-3 rounded-full bg-accent"></div>
-  
-          <div class="flex items-start justify-between mb-1">
-            <h3 data-i18n="exp.job1.title" class="font-serif text-xl text-gray-900">Werkstudent Softwareentwicklung</h3>
-            <span class="font-mono text-xs text-gray-400">Jul. 2024 – Feb. 2026</span>
-          </div>
-          <p data-i18n="exp.job1.company" class="text-sm text-accent font-medium mb-4">
-            Viertel Motoren GmbH · Nürnberg
-          </p>
-          <ul class="space-y-2 mb-4">
-            <li data-i18n="exp.job1.li1" class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
-              Entwicklung und Wartung interner Softwarelösungen
-            </li>
-            <li data-i18n="xp.job1.li2" class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
-              Verwaltung und Pflege von Datenbanken
-            </li>
-            <li data-i18n="xp.job1.li3" class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
-              Identifizierung von Prozessoptimierungspotenzialen
-            </li>
-            <li data-i18n="xp.job1.li4" class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
-              Fehleranalysen und Unterstützung bei laufenden Projekten
-            </li>
-          </ul>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">Lobster Pro</span>
-            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">Lobster Data</span>
-            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">Jasper Studio</span>
-            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">MySQL</span>
-          </div>
-        </article>
-  
-        <!-- Job 2 -->
-        <article class="exp-item relative">
-          <div class="absolute -left-[2.35rem] top-1.5 w-3 h-3 rounded-full bg-accent"></div>
-  
-          <div class="flex items-start justify-between mb-1">
-            <h3 data-i18n="exp.job2.title" class="font-serif text-xl text-gray-900">Werkstudent Softwareentwicklung</h3>
-            <span class="font-mono text-xs text-gray-400">Sep. 2021 – Apr. 2022</span>
-          </div>
-          <p data-i18n="exp.job2.company" class="text-sm text-accent font-medium mb-4">
-            SOLUTECHN Sarl · Yaoundé, Kamerun
-          </p>
-          <ul class="space-y-2 mb-4">
-            <li data-i18n="exp.job2.li1" class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
-              Konzeption und Implementierung responsiver Web-Interfaces mit React & Vue.js
-            </li>
-            <li data-i18n="exp.job2.li2" class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
-              Design und Optimierung relationaler Datenbankschemata in MySQL
-            </li>
-            <li data-i18n="exp.job2.li3" class="text-sm text-gray-500 pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-gray-300">
-              Systematische Code-Reviews und Unit-Tests
-            </li>
-          </ul>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">HTML</span>
-            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">Bootstrap</span>
-            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">React.js</span>
-            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">Vue.js</span>
-            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">SQL</span>
-            <span class="bg-white border border-gray-100 text-gray-500 font-mono text-xs px-3 py-1 rounded">GitHub</span>
-          </div>
-        </article>
-  
+    </header>
+
+    <article class="entry" data-entry id="uker">
+      <div class="entry-meta">
+        <p class="when"><span lang="de">Apr. 2026 – heute</span><span lang="en">Apr 2026 – present</span></p>
+        <p class="where">Erlangen</p>
       </div>
-    </div>
-  </section>
+      <div class="entry-body">
+        <h3 class="h3 entry-title">
+          <span lang="de">Universitätsklinikum Erlangen</span>
+          <span lang="en">University Hospital Erlangen</span>
+        </h3>
+        <p class="entry-role">
+          <span lang="de">Studentische Hilfskraft – Full-Stack-Entwicklung</span>
+          <span lang="en">Student assistant – full-stack development</span>
+        </p>
+        <ul class="points">
+          <li data-chunk><span lang="de">Mitentwicklung einer KI-gestützten Webanwendung für Gesprächssimulationen im palliativen Kontext</span><span lang="en">Co-developing an AI-powered web application for conversation simulations in palliative care</span></li>
+          <li data-chunk><span lang="de">Full-Stack-Entwicklung mit Python, Angular, Flask, MariaDB und Docker inkl. REST-Anbindung und rollenbasierter Rechteverwaltung</span><span lang="en">Full-stack development with Python, Angular, Flask, MariaDB and Docker, including REST integration and role-based access control</span></li>
+          <li data-chunk><span lang="de">Integration von KI-Feedback über die OpenAI Realtime API</span><span lang="en">Integrating AI feedback via the OpenAI Realtime API</span></li>
+        </ul>
+        <ul class="tags" data-chunk aria-label="Technologien">
+          <li>Python</li><li>Angular</li><li>Flask</li><li>MariaDB</li><li>Docker</li><li>OpenAI Realtime API</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry" data-entry id="tutor">
+      <div class="entry-meta">
+        <p class="when"><span lang="de">Apr. 2026 – heute</span><span lang="en">Apr 2026 – present</span></p>
+        <p class="where">Erlangen</p>
+      </div>
+      <div class="entry-body">
+        <h3 class="h3 entry-title">
+          <span lang="de">Friedrich-Alexander-Universität Erlangen-Nürnberg</span>
+          <span lang="en">Friedrich-Alexander-Universität Erlangen-Nürnberg</span>
+        </h3>
+        <p class="entry-role">
+          <span lang="de">Übungsleiter „Informatik 2 für Nebenfachstudierende“</span>
+          <span lang="en">Teaching assistant, “Computer Science 2 for minor-subject students”</span>
+        </p>
+        <ul class="points">
+          <li data-chunk><span lang="de">Leitung von Übungsgruppen zu SQL, PHP, HTML/CSS, JavaScript, jQuery und Unix</span><span lang="en">Leading exercise groups on SQL, PHP, HTML/CSS, JavaScript, jQuery and Unix</span></li>
+          <li data-chunk><span lang="de">Vermittlung technischer Inhalte an Studierende ohne Informatik-Hauptfach</span><span lang="en">Teaching technical content to students who don't major in computer science</span></li>
+        </ul>
+        <ul class="tags" data-chunk aria-label="Themen">
+          <li>SQL</li><li>PHP</li><li>HTML/CSS</li><li>JavaScript</li><li>jQuery</li><li>Unix</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry" data-entry id="viertel">
+      <div class="entry-meta">
+        <p class="when"><span lang="de">Juli 2024 – Feb. 2026</span><span lang="en">Jul 2024 – Feb 2026</span></p>
+        <p class="where"><span lang="de">Nürnberg</span><span lang="en">Nuremberg</span></p>
+      </div>
+      <div class="entry-body">
+        <h3 class="h3 entry-title">Viertel Motoren GmbH</h3>
+        <p class="entry-role">
+          <span lang="de">Werkstudent Softwareentwicklung</span>
+          <span lang="en">Working student, software development</span>
+        </p>
+        <ul class="points">
+          <li data-chunk><span lang="de">Entwicklung und Wartung interner Softwarelösungen sowie Pflege der zugehörigen Datenbanken</span><span lang="en">Developing and maintaining internal software and the databases behind it</span></li>
+          <li data-chunk><span lang="de">Unterstützung bei laufenden Projekten, Fehleranalysen und Identifikation von Prozessoptimierungen</span><span lang="en">Supporting ongoing projects, analysing bugs and identifying process improvements</span></li>
+        </ul>
+        <ul class="tags" data-chunk aria-label="Technologien">
+          <li>MySQL</li><li>Lobster Pro</li><li>Lobster Data</li><li>Jasper Studio</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ========================
+     KENNTNISSE
+========================== -->
+<section class="section section-alt" id="skills" aria-labelledby="skills-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="h2" id="skills-h"><span lang="de">Kenntnisse</span><span lang="en">Skills</span></h2>
+      <p class="section-lead">
+        <span lang="de">Tippe eine Technologie an, um zu sehen, wo ich sie eingesetzt habe. Die Zahl zeigt, in wie vielen Abschnitten sie vorkommt.</span>
+        <span lang="en">Tap a technology to see where I've used it. The number shows how many sections mention it.</span>
+      </p>
+    </header>
+
+    <dl class="skills">
+      <div class="skill-row">
+        <dt><span lang="de">KI &amp; LLM</span><span lang="en">AI &amp; LLM</span></dt>
+        <dd>
+          <button type="button" class="skill" data-q="RAG">RAG-Pipelines</button>
+          <button type="button" class="skill" data-q="LangChain">LangChain</button>
+          <button type="button" class="skill" data-q="Ollama">Ollama</button>
+          <button type="button" class="skill" data-q="Mistral">Mistral 7B</button>
+          <button type="button" class="skill" data-q="OpenAI Realtime">OpenAI Realtime API</button>
+          <button type="button" class="skill" data-q="ChromaDB">ChromaDB</button>
+          <button type="button" class="skill" data-q="RAGAS">RAGAS</button>
+          <button type="button" class="skill" data-q="Garak">Garak</button>
+        </dd>
+      </div>
+      <div class="skill-row">
+        <dt><span lang="de">Dokumentenverarbeitung</span><span lang="en">Document processing</span></dt>
+        <dd>
+          <button type="button" class="skill" data-q="Tesseract">Tesseract OCR</button>
+          <button type="button" class="skill" data-q="Tika">Apache Tika</button>
+          <button type="button" class="skill" data-q="Docling">Docling</button>
+          <button type="button" class="skill" data-q="Surya">Surya</button>
+          <button type="button" class="skill" data-q="LLaVA">LLaVA</button>
+        </dd>
+      </div>
+      <div class="skill-row">
+        <dt><span lang="de">Programmiersprachen</span><span lang="en">Languages</span></dt>
+        <dd>
+          <button type="button" class="skill" data-q="Python">Python</button>
+          <button type="button" class="skill" data-q="JavaScript">JavaScript</button>
+          <button type="button" class="skill" data-q="TypeScript">TypeScript</button>
+          <button type="button" class="skill" data-q="C#">C#</button>
+          <button type="button" class="skill" data-q="Java">Java</button>
+        </dd>
+      </div>
+      <div class="skill-row">
+        <dt>Frameworks</dt>
+        <dd>
+          <button type="button" class="skill" data-q="Angular">Angular</button>
+          <button type="button" class="skill" data-q="Vue.js">Vue.js</button>
+          <button type="button" class="skill" data-q="ASP.NET">ASP.NET Core</button>
+          <button type="button" class="skill" data-q="Node.js Express">Node.js / Express</button>
+          <button type="button" class="skill" data-q="Flask">Flask</button>
+        </dd>
+      </div>
+      <div class="skill-row">
+        <dt><span lang="de">Datenbanken</span><span lang="en">Databases</span></dt>
+        <dd>
+          <button type="button" class="skill" data-q="PostgreSQL">PostgreSQL</button>
+          <button type="button" class="skill" data-q="MySQL MariaDB">MySQL / MariaDB</button>
+          <button type="button" class="skill" data-q="MongoDB">MongoDB</button>
+        </dd>
+      </div>
+      <div class="skill-row">
+        <dt>DevOps &amp; Tools</dt>
+        <dd>
+          <button type="button" class="skill" data-q="Docker">Docker</button>
+          <button type="button" class="skill" data-q="GitHub">Git / GitHub</button>
+          <button type="button" class="skill" data-q="GitHub Actions">GitHub Actions</button>
+          <button type="button" class="skill" data-q="OpenAPI Swagger">OpenAPI / Swagger</button>
+          <button type="button" class="skill" data-q="Lobster">Lobster Data / Pro</button>
+          <button type="button" class="skill" data-q="Jasper">Jasper Studio</button>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ========================
+     AUSBILDUNG
+========================== -->
+<section class="section" id="education" aria-labelledby="education-h">
+  <div class="wrap">
+    <header class="section-head">
+      <h2 class="h2" id="education-h"><span lang="de">Ausbildung</span><span lang="en">Education</span></h2>
+    </header>
+
+    <article class="entry" data-entry id="msc">
+      <div class="entry-meta">
+        <p class="when"><span lang="de">März 2024 – Dez. 2026 (vsl.)</span><span lang="en">Mar 2024 – Dec 2026 (exp.)</span></p>
+        <p class="where">Erlangen</p>
+      </div>
+      <div class="entry-body">
+        <h3 class="h3 entry-title">
+          <span lang="de">Master of Science, Informatik</span>
+          <span lang="en">Master of Science, Computer Science</span>
+        </h3>
+        <p class="entry-role">
+          Friedrich-Alexander-Universität Erlangen-Nürnberg
+          <span class="grade"><span lang="de">Schnitt aktuell 2,7</span><span lang="en">Current GPA 2.7 (German scale)</span></span>
+        </p>
+        <p class="entry-lead" data-chunk>
+          <span lang="de">Vertiefung: Software Engineering und Datenbanksysteme.</span>
+          <span lang="en">Specialisation: Software Engineering and Database Systems.</span>
+        </p>
+        <table class="modules" data-chunk>
+          <caption class="sr-only"><span lang="de">Ausgewählte Module</span><span lang="en">Selected modules</span></caption>
+          <thead class="sr-only">
+            <tr><th scope="col">Modul</th><th scope="col">Note</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row"><span lang="de">The AMOS Project – agile Teamentwicklung nach Scrum</span><span lang="en">The AMOS Project – agile team development with Scrum</span></th><td>1,3</td></tr>
+            <tr><th scope="row"><span lang="de">Software-Projektmanagement</span><span lang="en">Software project management</span></th><td>1,0</td></tr>
+            <tr><th scope="row">Advanced Design and Programming</th><td>1,0</td></tr>
+            <tr><th scope="row">Middleware – Cloud Computing</th><td>–</td></tr>
+            <tr><th scope="row"><span lang="de">Informationssicherheit</span><span lang="en">Information security</span></th><td>–</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="entry" data-entry id="bsc">
+      <div class="entry-meta">
+        <p class="when"><span lang="de">Sept. 2019 – März 2022</span><span lang="en">Sep 2019 – Mar 2022</span></p>
+        <p class="where"><span lang="de">Yaoundé, Kamerun</span><span lang="en">Yaoundé, Cameroon</span></p>
+      </div>
+      <div class="entry-body">
+        <h3 class="h3 entry-title">
+          <span lang="de">Bachelor of Science (Licence), Informatik</span>
+          <span lang="en">Bachelor of Science (Licence), Computer Science</span>
+        </h3>
+        <p class="entry-role">
+          Université de Yaoundé I
+          <span class="grade">2,46 / 4,00 (Assez Bien)</span>
+        </p>
+        <p class="entry-lead" data-chunk>
+          <span lang="de">Schwerpunkt Informationssysteme und Software Engineering. Abschlussprojekt: <a href="#smartedu">SmartEDU</a>, eine E-Library-Plattform mit Microservices.</span>
+          <span lang="en">Focus on information systems and software engineering. Final project: <a href="#smartedu">SmartEDU</a>, an e-library platform built with microservices.</span>
+        </p>
+      </div>
+    </article>
+
+    <article class="entry" data-entry id="cert">
+      <div class="entry-meta">
+        <p class="when"><span lang="de">Prüfung Feb. 2027</span><span lang="en">Exam Feb 2027</span></p>
+      </div>
+      <div class="entry-body">
+        <h3 class="h3 entry-title">Microsoft Certified: Azure AI Apps and Agents Developer Associate</h3>
+        <p class="entry-role">
+          <span lang="de">Zertifizierung AI-103 · in Vorbereitung</span>
+          <span lang="en">Certification AI-103 · in preparation</span>
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
 
 <!-- ========================
      KONTAKT
 ========================== -->
-<section id="contact" class="bg-accent py-24">
-    <div class="max-w-6xl mx-auto px-8">
-  
-      <p data-i18n="contact.label" class="font-mono text-xs text-white/60 uppercase tracking-widest mb-3">
-        // Kontakt
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="wrap contact-grid">
+    <div class="contact-copy">
+      <h2 class="h2" id="contact-h"><span lang="de">Lass uns sprechen.</span><span lang="en">Let's talk.</span></h2>
+      <p class="contact-lead">
+        <span lang="de">Du suchst jemanden, der LLM-Funktionen sauber in echte Software bringt? Schreib mir direkt oder über das Formular. Ich antworte in der Regel innerhalb von ein, zwei Tagen.</span>
+        <span lang="en">Looking for someone who brings LLM features cleanly into real software? Write to me directly or use the form. I usually reply within a day or two.</span>
       </p>
-      <h2 data-i18n="contact.title" class="font-serif text-4xl text-white tracking-tight mb-4">
-        Lass uns reden.
-      </h2>
-      <p data-i18n="contact.lead" class="text-white/70 text-lg font-light mb-12 max-w-xl">
-        Offen für Vollzeitstellen und spannende Projekte nach dem Masterabschluss.
-      </p>
-  
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-  
-        <!-- Linke Seite: Kontaktinfos + Formular -->
-        <div class="space-y-4">
-  
-          <a href="mailto:ouabosamuel10@gmail.com"
-             class="flex items-center gap-4 bg-white/10 border border-white/15 rounded-xl p-5 hover:bg-white/20 transition-colors">
-            <span class="text-2xl">✉️</span>
-            <div>
-              <p class="text-xs text-white/60 mb-0.5">E-Mail</p>
-              <p class="text-sm font-medium text-white">ouabosamuel10@gmail.com</p>
-            </div>
+      <ul class="contact-links">
+        <li>
+          <a href="mailto:ouabosamuel10@gmail.com">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+            ouabosamuel10@gmail.com
           </a>
-  
-          <a href="https://github.com/so77nava" target="_blank"
-             class="flex items-center gap-4 bg-white/10 border border-white/15 rounded-xl p-5 hover:bg-white/20 transition-colors">
-            <span class="text-2xl">💻</span>
-            <div>
-              <p class="text-xs text-white/60 mb-0.5">GitHub</p>
-              <p class="text-sm font-medium text-white">github.com/so77nava</p>
-            </div>
+        </li>
+        <li>
+          <a href="https://github.com/so77nava" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+            github.com/so77nava
           </a>
-  
-          <a href="https://www.linkedin.com/in/samuel-jordan-ouabo-739465313/" target="_blank"
-             class="flex items-center gap-4 bg-white/10 border border-white/15 rounded-xl p-5 hover:bg-white/20 transition-colors">
-            <span class="text-2xl">🔗</span>
-            <div>
-              <p class="text-xs text-white/60 mb-0.5">LinkedIn</p>
-              <p data-i18n="contact.linkedin" class="text-sm font-medium text-white">Profil ansehen →</p>
-            </div>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/samuel-jordan-ouabo-739465313/" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>
+            LinkedIn
           </a>
-  
-          <div class="flex items-center gap-4 bg-white/10 border border-white/15 rounded-xl p-5">
-            <span class="text-2xl">📍</span>
-            <div>
-              <p class="text-xs text-white/60 mb-0.5">Standort</p>
-              <p class="text-sm font-medium text-white">Erlangen, Bayern</p>
-            </div>
-          </div>
-  
-        </div>
-  
-        <!-- Rechte Seite: Kontaktformular -->
-        <form id="contact-form" class="space-y-4">
-  
-          <div>
-            <label for="name" class="block text-xs text-white/60 uppercase tracking-wider mb-2">
-              Name
-            </label>
-            <input
-              type="text" id="name" name="name"
-              data-i18n-placeholder="contact.form.name.placeholder"
-              placeholder="Dein Name"
-              required
-              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors"
-            />
-          </div>
-  
-          <div>
-            <label for="email" class="block text-xs text-white/60 uppercase tracking-wider mb-2">
-              E-Mail
-            </label>
-            <input
-              type="email" id="email" name="email"
-              data-i18n-placeholder="contact.form.email.placeholder"
-              placeholder="deine@email.com"
-              required
-              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors"
-            />
-          </div>
-  
-          <div>
-            <label data-i18n="contact.form.message" for="message" class="block text-xs text-white/60 uppercase tracking-wider mb-2">
-              Nachricht
-            </label>
-            <textarea
-              id="message" name="message"
-              rows="5"
-              data-i18n-placeholder="contact.form.message.placeholder"
-              placeholder="Deine Nachricht..."
-              required
-              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-white/60 transition-colors resize-none"
-            ></textarea>
-          </div>
-  
-          <button
-            type="submit"
-            id="submit-btn"
-            data-i18n="contact.form.submit"
-            class="w-full bg-white text-accent font-medium text-sm py-3 rounded-lg hover:bg-white/90 transition-colors"
-          >
-            Nachricht senden
-          </button>
-  
-          <!-- Feedback Nachricht -->
-          <p id="form-feedback" class="text-sm text-center text-white/70 hidden"></p>
-  
-        </form>
+        </li>
+        <li class="contact-place">
+          <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+          <span lang="de">Erlangen, Bayern</span><span lang="en">Erlangen, Bavaria</span>
+        </li>
+      </ul>
+    </div>
+
+    <form class="form" id="contact-form" novalidate>
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required
+               data-ph-de="Dein Name" data-ph-en="Your name" placeholder="Dein Name">
       </div>
-    </div>
-  </section>
+      <div class="field">
+        <label for="email"><span lang="de">E-Mail</span><span lang="en">Email</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required
+               data-ph-de="name@firma.de" data-ph-en="name@company.com" placeholder="name@firma.de">
+      </div>
+      <div class="field">
+        <label for="message"><span lang="de">Nachricht</span><span lang="en">Message</span></label>
+        <textarea id="message" name="message" rows="5" required
+                  data-ph-de="Worum geht es?" data-ph-en="What's it about?" placeholder="Worum geht es?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-invert" id="submit-btn">
+        <span class="btn-label"><span lang="de">Nachricht senden</span><span lang="en">Send message</span></span>
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </button>
+      <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
 
-  </main>
+</main>
 
-<!-- ========================
-     FOOTER
-========================== -->
-<footer class="bg-gray-900 py-8">
-    <div class="max-w-6xl mx-auto px-8 flex items-center justify-between">
-      <p class="font-mono text-xs text-gray-500">
-        © 2025 Samuel Jordan Ouabo
-      </p>
-      <p class="font-mono text-xs text-gray-500">
-        Built with HTML · Tailwind · JavaScript
-      </p>
-    </div>
-  </footer>
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
+<footer class="footer">
+  <div class="wrap footer-row">
+    <p>© 2026 Samuel Jordan Ouabo</p>
+    <p>
+      <span lang="de">Handgeschrieben in HTML, CSS und JavaScript. Die Suche läuft lokal.</span>
+      <span lang="en">Hand-written in HTML, CSS and JavaScript. Search runs locally.</span>
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>

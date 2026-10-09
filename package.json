@@ -4,8 +4,6 @@
   "description": "My personal portfolio",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./docs/css/style.css -o ./docs/css/output.css",
-    "watch:css": "tailwindcss -i ./docs/css/style.css -o ./docs/css/output.css --watch",
     "server": "node server/index.js",
     "dev": "nodemon server/index.js"
   },
@@ -21,10 +19,7 @@
   },
   "homepage": "https://github.com/so77nava/Portfolio#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.27",
-    "nodemon": "^3.1.14",
-    "postcss": "^8.5.8",
-    "tailwindcss": "^3.4.19"
+    "nodemon": "^3.1.14"
   },
   "dependencies": {
     "cors": "^2.8.6",
