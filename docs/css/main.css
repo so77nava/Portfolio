@@ -152,7 +152,6 @@ html { scrollbar-color: var(--line-strong) transparent; }
   letter-spacing: -0.035em;
   text-wrap: balance;
 }
-.display em { font-style: normal; color: inherit; }
 
 .h2 {
   font-family: var(--font-display);
